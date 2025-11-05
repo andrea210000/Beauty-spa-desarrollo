@@ -1,53 +1,59 @@
-<div class="font-[Nunito Sans] h-screen flex items-center justify-center bg-[#faf7f7]">
-    <div class="bg-white text-center h-[60%] p-4 rounded shadow-md w-[28vw] ">
-        <!-- esta caja contiene el componente agenda tu cita -->
+<div class="font-[Nunito Sans] h-screen flex items-center justify-center bg-[var(--white-beauty)] text-[var(--dark-beauty-text)]">
+    <div class=" text-center h-[98%] p-4 rounded shadow-md w-[22vw] m-[4vw]">
         <div>
             <h1 class="text-[1.2vw] font-semibold mb-4">Agenda tu cita</h1>
         </div>
-        <!-- esta caja contiene los componentes servicio y profesional -->
         <div class="space-y-4">
             <div>
                 <div class="flex w-full gap-4">
-                    <div class="flex flex-col justify-start items-start w-[50%] text-[0.9vw]">
-                        <p>Servicio</p>
-                        <select class="border w-full p-3 rounded-[7px] border-[var(--pink-beauty)]" name="Selecciona un servicio">
+                    <div class="flex flex-col justify-start items-start w-[50%]">
+                        <p class="text-[0.9vw] pb-[0.2vw]">Servicio</p>
+                        <select class="border w-full p-3 rounded-[7px] border-[var(--pink-beauty)] text-[0.7vw]" name="Selecciona un servicio">
                             <option value="servicio1">Selecciona un servicio</option>
                             <option value="servicio2">Servicio 2</option>
                             <option value="servicio3">Servicio 3</option>
                         </select>
                     </div>
-                    <div class="flex flex-col justify-start items-start w-[50%] text-[0.9vw]">
-                        <p>Profesional</p>
-                        <select class="border w-full p-3 rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]" name="Selecciona un profesional">
-                            <option value="servicio1">Selecciona un Profesional</option>
+                    <div class="flex flex-col justify-start items-start w-[50%]">
+                        <p class="text-[0.9vw] pb-[0.2vw]">Profesional</p>
+                        <select
+                            class="border w-full p-3 rounded-[var(--default-border-radius)] border-[var(--pink-beauty)] text-[0.7vw]" name="Selecciona un profesional">
+                            <option value="servicio1">Cualquier Disponible</option>
                             <option value="servicio2">Profesional 2</option>
                             <option value="servicio3">Profesional 3</option>
                         </select>
                     </div>
                 </div>
-                <div class="[0.9vw]">
-                    <p class="p-4">Selecciona fecha y hora</p>
-                    <input class="pb-4 w-full border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)] " type="date" id="start" name="trip-start" value="2025-07-22" min="2025-01-01" max="2026-12-31" />
+                <div class="flex flex-col  font-[Nunito Sans]">
+                    <p class="pt-4 [0.9vw]">Selecciona fecha</p>
+                    <mat-card class="W-[22vw] font-[Nunito Sans]">
+                        <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+                    </mat-card>
                 </div>
-                <div class="[1vw]">
-                    <p>Hora</p>
-                    <input type="time" class="w-full p-2 text-black rounded" />
+                <div class="flex flex-col justify-start items-start [1vw] pt-2 ">
+                    <p class="font-[0.9vw] pb-2">Hora</p>
+                    <mat-form-field>
+                        <mat-label>Elige una Hora</mat-label>
+                        <input matInput [matTimepicker]="picker">
+                        <mat-timepicker-toggle matIconSuffix [for]="picker" />
+                        <mat-timepicker #picker />
+                    </mat-form-field>
                 </div>
-                <div>
-                    <p>Nombre</p>
-                    <input type="text" class="w-full p-2 text-black rounded" />
+                <div class="flex flex-col items-start w-full">
+                    <p class="pb-2 pt-1">Nombre</p>
+                    <input type="text" class="w-full p-2 rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]"/>
                 </div>
-                <div>
+                <div class="flex flex-col items-start w-full">
                     <p>Correo</p>
-                    <input type="text" class="w-full p-2 text-black rounded" />
+                    <input type="text" class="w-full p-2 rounded rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]" />
                 </div>
-                <div>
+                <div class="flex flex-col items-start">
                     <p>Número de teléfono</p>
-                    <input type="text" class="w-full p-2 text-black rounded" />
+                    <input type="tel" maxlength="10" pattern="[0-9]{10}" class="w-full p-2 rounded rounded rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]" />
                 </div>
                 <div>
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
-                        Agenda tu cita
+                    <button class="bg-[#f9b9d9] cursor-pointer w-[20.3vw] font-bold py-2 px-4 rounded mt-4">
+                        Agendar tu cita
                     </button>
                 </div>
             </div>
