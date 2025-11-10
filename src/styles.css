@@ -1,13 +1,71 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playpen+Sans:wght@100..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 body {
     font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root {
     --pink-beauty: #f9ddeb;
     --default-border-radius: 7px;
 }
+
+:root {
+    --dark-beauty-text: #333333;
+}
+
+:root {
+    --white-beauty: #faf7f7;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.mat-calendar {
+    font-family: 'Nunito Sans', sans-serif;
+    height: 23vw;
+}
+
+.mat-calendar-header,
+.mat-calendar-body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.mat-calendar-body-selected {
+    background-color: #f3a1c4 !important;
+    color: white !important;
+    border: 2px solid #f3a1c4 !important;
+    border-radius: 50% !important;
+}
+
+.mat-calendar-body-cell:hover {
+    background-color: #fce7f3 !important;
+}
+
+.mat-calendar-header {
+    background-color: #f3f0f0;
+    color: #111827;
+}
+
+.mat-calendar-body-today {
+    border-color: #f3a1c4 !important;
+}
+
+.mat-form-field {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+mat-form-field {
+    width: 100%;
+    height: 3.4vw;
+}
+

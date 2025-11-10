@@ -5,6 +5,7 @@ import { ScheduleComponent } from './views/shared/schedule-component/schedule-co
 import {ErrorComponent} from './views/shared/error-component/error-component';
 import {LocationComponent} from './views/shared/location-component/location-component';
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, MenuComponent, ScheduleComponent, ErrorComponent, LocationComponent],
