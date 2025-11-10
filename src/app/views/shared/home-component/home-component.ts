@@ -1,5 +1,4 @@
 import { Component, ElementRef, viewChild, AfterViewInit  } from '@angular/core';
-import { Component } from '@angular/core';
 import { A11yModule } from "@angular/cdk/a11y";
 
 @Component({
