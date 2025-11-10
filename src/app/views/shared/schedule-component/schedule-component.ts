@@ -11,7 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 @Component({
   selector: 'app-schedule-component',
   standalone: true,
-  imports: [MatCardModule, MatDatepickerModule, DatePipe, MatFormFieldModule, MatInputModule, MatTimepickerModule, CdkAriaLive],
+  imports: [MatCardModule, MatDatepickerModule, DatePipe, MatFormFieldModule, MatInputModule, MatTimepickerModule, A11yModule, CdkAriaLive],
   providers: [provideNativeDateAdapter(),],
   templateUrl: './schedule-component.html',
   styleUrls: ['./schedule-component.css'],
