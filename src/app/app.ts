@@ -2,10 +2,16 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from './views/shared/menu-component/menu-component';
 import { ScheduleComponent } from './views/shared/schedule-component/schedule-component';
-import { ContactComponent } from './views/shared/contact-component/contact-component';
+import { FooterComponent} from './views/shared/footer-component/footer-component';
+import {AboutUsComponent } from './views/shared/about-us-component/about-us-component'
+import {ErrorComponent} from './views/shared/error-component/error-component';
+import {LocationComponent} from './views/shared/location-component/location-component';
+
+
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuComponent, ScheduleComponent, ContactComponent],
+  imports: [RouterOutlet, MenuComponent, ScheduleComponent,FooterComponent,AboutUsComponent,ErrorComponent,LocationComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
