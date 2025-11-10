@@ -1,0 +1,234 @@
+<div class="bg-[var(--white-beauty)] font-[Nunito Sans] m-0 p-0 box-border">
+    <div class="w-full overflow-hidden relative">
+        <ul class="flex animate-slide">
+            <li class="w-full shrink-0 relative ">
+                <img class="w-full h-[817px] object-cover " src="/assets/images/1.jpg" alt="">
+                <div class="absolute inset-0 flex flex-col justify-center items-center p-[3vw] bg-black/30 text-white">
+                    <h2 class="font-bold text-[5vw] pb-[4vw]">Bienvenido a Beauty Spa</h2>
+                    <p class="text-[1.4vw] pb-[2vw] text-center">Tu oasis de tranquilidad y belleza. Descubre nuestros
+                        tratamientos <br><br> personalizados y productos de alta calidad.</p>
+                    <div class="text-[1vw]">
+                        <button
+                            class="cursor-pointer bg-[#f9b9d9] p-[1vw] rounded-3xl w-[11vw] font-semibold text-[var(--dark-beauty-text)] ">Explorar
+                            Servicios</button>
+                    </div>
+                </div>
+            </li>
+            <li class="w-full shrink-0 relative ">
+                <img class="w-full h-[817px] object-cover " src="/assets/images/3.jpg" alt="">
+                <div class="absolute inset-0 flex flex-col justify-center items-center p-[3vw] bg-black/30 text-white">
+                    <h2 class="font-bold text-[5vw] pb-[4vw]">Relájate y Renueva</h2>
+                    <p class="text-[1.4vw] pb-[2vw] text-center">Tratamientos de spa diseñados para tu bienestar y
+                        descanso.</p>
+                    <div class="text-[1vw]">
+                        <button
+                            class="cursor-pointer bg-[#f9b9d9] p-[1vw] rounded-3xl w-[11vw] font-semibold text-[var(--dark-beauty-text)] ">Explorar
+                            Servicios</button>
+                    </div>
+                </div>
+            </li>
+            <li class="w-full shrink-0 relative ">
+                <img class="w-full h-[817px] object-cover " src="/assets/images/2.jpg" alt="">
+                <div class="absolute inset-0 flex flex-col justify-center items-center p-[3vw] bg-black/30 text-white">
+                    <h2 class="font-bold text-[5vw] pb-[4vw]">Cuidado y Belleza</h2>
+                    <p class="text-[1.4vw] pb-[2vw] text-center">Manicure, pedicure y más servicios de alta calidad.</p>
+                    <div class="text-[1vw]">
+                        <button
+                            class="cursor-pointer bg-[#f9b9d9] p-[1vw] rounded-3xl w-[11vw] font-semibold text-[var(--dark-beauty-text)] ">Explorar
+                            Servicios</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Services Section -->
+    <div class="flex justify-center items-center p-[2vw] pt-[4.5vw]">
+        <div class="text-center">
+            <p class="text-[2.5vw] font-semibold">Nuestros Servicios</p>
+            <P class="text-[1.2vw] pt-[1.7vw] ">Relájate, renuévate y rejuvenece.</P>
+        </div>
+    </div>
+    <div class="bg-[var(--white-beauty)] p-4">
+        <div class="flex justify-center items-center p-4 gap-[6vw] flex-wrap">
+            <div>
+                <div class="relative">
+                    <video class="h-[20vw] rounded-[9px] w-[24vw] object-cover  cursor-pointer"
+                        src="/assets/videos/facial-treatment.webm" autoplay muted loop></video>
+                    <div
+                        class="absolute h-[20vw] rounded-[9px] w-[24vw] hover:bg-pink-100/40 z-10 inset-0 cursor-pointer">
+                    </div>
+                </div>
+                <p class="text-[1.2vw] text-center pt-[1vw] font-semibold">Tratamientos Faciales</p>
+            </div>
+            <div>
+                <div class="relative">
+                    <video class="h-[20vw] rounded-[9px] w-[24vw] object-cover cursor-pointer"
+                        src="/assets/videos/masagges-treatments.webm" autoplay muted loop></video>
+                    <div
+                        class="absolute h-[20vw] rounded-[9px] w-[24vw] hover:bg-pink-100/40 opacity-0 hover:opacity-100 z-10 inset-0 cursor-pointer transition-opacity duration-300 ease-in-out">
+                    </div>
+                </div>
+                <p class="text-[1.2vw] text-center pt-[1vw] font-semibold">Masajes Relajantes</p>
+            </div>
+            <div>
+                <div class="relative">
+                    <video class="h-[20vw] rounded-[9px] w-[24vw] object-cover cursor-pointer"
+                        src="/assets/videos/beauty-salon.webm" autoplay muted loop></video>
+                    <div
+                        class="absolute h-[20vw] rounded-[9px] w-[24vw] hover:bg-pink-100/40 opacity-0 hover:opacity-100 z-10 inset-0 cursor-pointer transition-opacity duration-300 ease-in-out">
+                    </div>
+                </div>
+                <p class="text-[1.2vw] text-center pt-[1vw] font-semibold">Tratamientos de estética</p>
+            </div>
+        </div>
+        <div class="flex items-center justify-center p-[2vw] pt-[7vw] pb-[4vw]">
+            <div class="text-center">
+                <p class="text-[2.5vw] font-semibold">Productos Destacados</p>
+                <P class="text-[1.2vw] pt-[1.7vw] ">Lleva la experiencia del spa a tu casa.</P>
+            </div>
+        </div>
+        <!-- Products Carrousel -->
+        <div class="w-full  overflow-hidden">
+            <!-- Products -->
+            <div class="flex  duration-700 ease-linear justify-center space-x-[1.5vw] whitespace-nowrap"
+                style="transform: translateX(0%);" #track>
+                <div class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105"
+                    #slide>
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/cream.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] pl-[0.5vw]">Crema Hidratante</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Hidratación profunda para una piel radiante.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/exfoliant.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Exfoliante Suave</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Elimina células y revunueva tu piel.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%]  p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105 ">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/oil.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Aceite Corporal Nutritivo</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Nutrición intensa para un cuerpo y piel suave.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%]  p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105 ">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/hair-mask.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw]">Mascarilla Capilar</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Restaura el brillo y la suavidad de tu cabello.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/serum.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Sérum Rejuvenecedor</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Revitaliza tu piel y devuelve su luminosidad natural.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/facial-toner.jpg"
+                        alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Tónico Facial</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Tonifica tu piel y mantiene su frescura todo el día.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/shower-gel.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Gel de Ducha</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Limpia suavemente y relaja tus sentidos.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/essential-oil.jpg"
+                        alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Aceite Esencial</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Calma la mente y equilibra tus emociones.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/lip-balm.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Bálsamo Labial Natural</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Hidrata y protege tus labios al instante.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/hand-cream.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Bálsamo Labial Natural</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Suaviza y repara la piel seca de tus manos.</p>
+                </div>
+                <div class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105"
+                    #slide>
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/cream.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] pl-[0.5vw]">Crema Hidratante</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Hidratación profunda para una piel radiante.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/exfoliant.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Exfoliante Suave</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Elimina células y revunueva tu piel.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%]  p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105 ">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/oil.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Aceite Corporal Nutritivo</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Nutrición intensa para un cuerpo y piel suave.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%]  p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105 ">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/hair-mask.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw]">Mascarilla Capilar</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Restaura el brillo y la suavidad de tu cabello.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/serum.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Sérum Rejuvenecedor</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Revitaliza tu piel y devuelve su luminosidad natural.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/facial-toner.jpg"
+                        alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Tónico Facial</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Tonifica tu piel y mantiene su frescura todo el día.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/shower-gel.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Gel de Ducha</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Limpia suavemente y relaja tus sentidos.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/essential-oil.jpg"
+                        alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Aceite Esencial</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Calma la mente y equilibra tus emociones.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/lip-balm.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Bálsamo Labial Natural</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Hidrata y protege tus labios al instante.</p>
+                </div>
+                <div
+                    class="h-[22vw] rounded-[9px] flex-[0_0_25%] p-[1vw] shadow-lg cursor-pointer hover:shadow-pink-200/50 transition-shadow duration-300 ease-in-out bg-[var(--white-beauty)] overflow-hidden transition-transform  duration-300 ease-in-out hover:scale-105">
+                    <img class="w-full h-[15vw] object-cover rounded-[9px]" src="/assets/images/hand-cream.jpg" alt="">
+                    <p class="text-[1vw] font-semibold pt-[1vw] pb-[0.5vw] ">Bálsamo Labial Natural</p>
+                    <p class="text-[0.8vw] pl-[0.5vw]">Suaviza y repara la piel seca de tus manos.</p>
+                </div>
+            </div>
+            <div class= "rounded-[9px]" style="background-image: url('/assets/images/banner.jpg'); background-size: cover; background-position: center; ">
+                <div class="block items-center justify-center text-center p-[4vw] m-[5vw] h-[25vw] ">
+                    <p class="text-[2.5vw] pb-[2vw] font-semibold text-white pt-[2vw]">Agenda tu cita hoy</p>
+                    <p class="text-[1vw] pb-[2vw] text-white">Disfruta de una experiencia unica en Beauty SPA. Reserva tu tratamiento<br><br> ahora.</p>
+                    <div class="flex items-center justify-center">
+                        <button
+                            class="text-[1vw] cursor-pointer bg-[#f9b9d9] p-[0.8vw] rounded-3xl w-[9vw] font-semibold text-[var(-dark-beauty-text)]">Agendar
+                            Cita
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
