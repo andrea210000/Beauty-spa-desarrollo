@@ -11,7 +11,7 @@ import {LocationComponent} from './views/shared/location-component/location-comp
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuComponent, ScheduleComponent, ErrorComponent, LocationComponent,FooterComponent,AboutUsComponent],
+  imports: [RouterOutlet, MenuComponent, ScheduleComponent,FooterComponent,AboutUsComponent,ErrorComponent,LocationComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
