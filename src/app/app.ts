@@ -4,11 +4,12 @@ import { MenuComponent } from './views/shared/menu-component/menu-component';
 import { ScheduleComponent } from './views/shared/schedule-component/schedule-component';
 import {ErrorComponent} from './views/shared/error-component/error-component';
 import {LocationComponent} from './views/shared/location-component/location-component';
+import {ServicesComponent} from './views/shared/services-component/services-component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuComponent, ScheduleComponent, ErrorComponent, LocationComponent],
+  imports: [RouterOutlet, MenuComponent, ScheduleComponent, ErrorComponent, LocationComponent, ServicesComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
