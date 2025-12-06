@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playpen+Sans:wght@100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 
 body {
@@ -69,3 +69,39 @@ mat-form-field {
     height: 3.4vw;
 }
 
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    33% {
+        transform: translateX(0%);
+    }
+
+    38% {
+        transform: translateX(-100%);
+    }
+
+    71% {
+        transform: translateX(-100%);
+    }
+
+    76% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
+.animate-slide {
+    animation: slide 18s infinite ease-in-out;
+}
+
+.zoom-hover {
+    transition: transform 0.4s ease; 
+}
+
+.zoom-hover:hover {
+    transform: scale(1.05); 
+}
