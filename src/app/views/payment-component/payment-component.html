@@ -1,0 +1,131 @@
+<div class="bg-white border-b">
+    <div class="max-w-5xl mx-auto px-4 py-6">
+        <div class="text-2xl font-semibold tracking-tight">Pago seguro</div>
+        <div class="mt-1 text-sm text-gray-600">Transacción segura y encriptada</div>
+    </div>
+</div>
+
+<div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Detalles de pago + Dirección -->
+        <div class="lg:col-span-2 space-y-6">
+
+            <!-- Detalles de pago -->
+            <div class="bg-white shadow-sm rounded-lg border p-6">
+                <div class="text-lg font-medium">Detalles de pago</div>
+                <div class="mt-4 space-y-4">
+                    <div>
+                        <div class="block text-sm font-medium text-gray-700">Nombre en la tarjeta</div>
+                        <div><input type="text"
+                                class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                placeholder="Nombre Apellido" /></div>
+                    </div>
+                    <div>
+                        <div class="block text-sm font-medium text-gray-700">Número de tarjeta</div>
+                        <div><input type="text"
+                                class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                placeholder="1234 5678 9012 3456" /></div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <div class="block text-sm font-medium text-gray-700">Fecha de vencimiento</div>
+                            <div><input type="text"
+                                    class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                    placeholder="MM/AA" /></div>
+                        </div>
+                        <div>
+                            <div class="block text-sm font-medium text-gray-700">CVV</div>
+                            <div><input type="password"
+                                    class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                    placeholder="•••" /></div>
+                        </div>
+                        <div class="flex items-start sm:items-center sm:justify-end">
+                            <div class="text-xs text-gray-500 sm:text-right">Transacción segura y encriptada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dirección de facturación -->
+            <div class="bg-white shadow-sm rounded-lg border p-6">
+                <div class="text-lg font-medium">Dirección de facturación</div>
+                <div class="mt-4 space-y-4">
+                    <div>
+                        <div class="block text-sm font-medium text-gray-700">Dirección</div>
+                        <div><input type="text"
+                                class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                placeholder="Calle Falsa 123" /></div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <div class="block text-sm font-medium text-gray-700">Ciudad</div>
+                            <div><input type="text"
+                                    class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                    placeholder="Ciudad" /></div>
+                        </div>
+                        <div>
+                            <div class="block text-sm font-medium text-gray-700">Código postal</div>
+                            <div><input type="text"
+                                    class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                    placeholder="12345" /></div>
+                        </div>
+                        <div>
+                            <div class="block text-sm font-medium text-gray-700">País</div>
+                            <div><input type="text"
+                                    class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                    placeholder="País" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de pago móvil -->
+            <div class="lg:hidden">
+                <div
+                    class="w-full inline-flex items-center justify-center rounded-md bg-pink-600 px-4 py-3 text-white font-medium hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    Pagar $162.00</div>
+                <div class="mt-2 text-xs text-gray-500">Al continuar, aceptas una transacción segura.</div>
+            </div>
+        </div>
+
+        <!-- Resumen del pedido -->
+        <div class="lg:col-span-1">
+            <div class="bg-white shadow-sm rounded-lg border p-6 space-y-4">
+                <div class="text-lg font-medium">Resumen del pedido</div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="text-sm text-gray-700">Masaje relajante</div>
+                        <div class="text-sm font-medium">$60.00</div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="text-sm text-gray-700">Facial hidratante</div>
+                        <div class="text-sm font-medium">$50.00</div>
+                    </div>
+                    <div class="border-t pt-3 space-y-2">
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="text-gray-600">Subtotal</div>
+                            <div class="font-medium">$110.00</div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="text-gray-600">Impuestos</div>
+                            <div class="font-medium">$52.00</div>
+                        </div>
+                        <div class="flex items-center justify-between text-base font-semibold pt-2">
+                            <div>Total</div>
+                            <div>$162.00</div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-4 w-full inline-flex items-center justify-center rounded-md bg-pink-600 px-4 py-3 text-white font-medium hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    Pagar $162.00</div>
+                <div class="mt-2 text-xs text-gray-500">Transacción segura y encriptada</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-5xl mx-auto px-4 pb-10">
+    <div class="text-xs text-gray-500">Beauty Spa © 2025. Todos los derechos reservados.</div>
+</div>
