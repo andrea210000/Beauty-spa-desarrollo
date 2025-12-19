@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { routes } from '../../../app.routes';
 
 @Component({
-  selector: 'app-footer-component',
+  selector: 'app-about-us-component',
   imports: [],
-  templateUrl: './footer-component.html',
-  styleUrl: './footer-component.css',
+  templateUrl: './about-us-component.html',
+  styleUrl: './about-us-component.css',
 })
-export class FooterComponent {
+export class AboutUsComponent {
   constructor(private router: Router) {}
-
   navigateTo(path: string): void {
     this.router.navigate([path]);
   }
+
 }

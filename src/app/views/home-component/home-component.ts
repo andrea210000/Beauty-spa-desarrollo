@@ -1,5 +1,8 @@
-import { Component, ElementRef, viewChild, AfterViewInit  } from '@angular/core';
+import { Component, ElementRef, viewChild, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { A11yModule } from "@angular/cdk/a11y";
+
+
 
 @Component({
   selector: 'app-home-component',
@@ -7,17 +10,23 @@ import { A11yModule } from "@angular/cdk/a11y";
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',
 })
-export class HomeComponent implements AfterViewInit  {
+export class HomeComponent implements AfterViewInit {
+  constructor(private router: Router) { }
+
+  navigateTo(path: string): void {
+    this.router.navigate([path]);
+  }
+
   track = viewChild<ElementRef<HTMLDivElement>>('track');
 
   currentTranslate = 0;
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.cloneSlides();
     this.startCarousel();
   }
 
-  cloneSlides(){
+  cloneSlides() {
     const trackEl = this.track()?.nativeElement;
     if (!trackEl) return;
 
@@ -28,18 +37,18 @@ export class HomeComponent implements AfterViewInit  {
     });
   }
 
-  startCarousel(){
+  startCarousel() {
+    
     const trackEl = this.track()?.nativeElement;
     if (!trackEl) return;
-
     const slideWidth = trackEl.firstElementChild?.clientWidth || 0;
-    const gap = window.innerWidth * 0.015; 
+    const gap = window.innerWidth * 0.015;
 
     setInterval(() => {
-        this.currentTranslate -= 10; 
+      this.currentTranslate -= (slideWidth + gap) / 20; // velocidad
 
-        if (Math.abs(this.currentTranslate) >= trackEl.scrollWidth / 2) {
-        this.currentTranslate = 1; // reinicia
+      if (Math.abs(this.currentTranslate) >= trackEl.scrollWidth / 2) {
+        this.currentTranslate = 0; // reinicia
       }
       trackEl.style.transform = `translateX(${this.currentTranslate}px)`;
     }, 50);

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { routes } from '../../../app.routes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-error-component',
@@ -7,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './error-component.css',
 })
 export class ErrorComponent {
+  constructor(private router: Router) { }
+
+  navigateTo(path: string): void {
+    this.router.navigate([path]);
+  }
 
 }

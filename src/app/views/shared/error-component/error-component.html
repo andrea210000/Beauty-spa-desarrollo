@@ -1,15 +1,14 @@
-<div class="flex items-center justify-center bg-[#faf7f7] font-['Nunito_Sans'] h-screen">
-        <div class="bg-[#f3a1c4] text-center shadow-md max-w-[30vw] w-full rounded-[1vw] p-[1vw] text-[1vw]">
+<div class="flex items-center justify-center bg-[#faf7f7] font-[Nunito Sans] h-[40vw]">
+        <div class="bg-[#f3a1c4] text-center shadow-md max-w-[30vw] w-full rounded-[1vw] p-[1vw] text-[1vw] h-[19vw]">
             <div class="font-bold">
-            <img src="assets/images/error-16-svgrepo-com.svg" alt="Error" class="mx-auto w-[3vw] h-auto mb-[0.5vw]">
+            <img src="assets/images/error.png" alt="Error" class="mx-auto w-[3vw] h-auto mb-[0.5vw] pb-[1vw]">
             </div>          
-            <h1 class="font-serif font-bold text-red-800 text-[2vw]">¡Oops!</h1>
-            <p class="text-red-800 mb-[0.4vw] text-[1vw]">Algo salió mal.</p>
-            <p class="text-black mb-[0.4vw] text-[1vw]">
-            No pudimos encontrar la página que estás buscando.
-            Por favor, verifica la URL o vuelve al inicio.
+            <h1 class="font-bold text-red-800 text-[2vw] pb-[1vw]">¡Oops!</h1>
+            <p class="text-red-800 mb-[0.4vw] text-[1vw] pb-[1vw]">Algo salió mal.</p>
+            <p class="text-black mb-[0.4vw] text-[1vw] pb-[1vw]">
+            No pudimos encontrar la página que estás buscando.<br><br>Por favor, verifica la URL o vuelve al inicio.
             </p>
-            <button class="bg-[#f9b5d7] text-black px-[1vw] py-[0.3vw] rounded-full cursor-pointer select-none">
+            <button class="bg-[#f9b5d7] text-black px-[1vw] py-[0.3vw] rounded-full cursor-pointer select-none h-[2.5vw]" (click)="navigateTo('')">
             Volver al inicio
             </button>
         </div> 
