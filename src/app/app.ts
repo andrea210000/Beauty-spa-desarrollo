@@ -6,12 +6,12 @@ import { FooterComponent} from './views/shared/footer-component/footer-component
 import {AboutUsComponent } from './views/shared/about-us-component/about-us-component'
 import {ErrorComponent} from './views/shared/error-component/error-component';
 import {LocationComponent} from './views/shared/location-component/location-component';
-
+import{OurProductsComponent} from './views/our-products-component/our-products-component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuComponent, ScheduleComponent, ErrorComponent, LocationComponent,FooterComponent,AboutUsComponent],
+  imports: [RouterOutlet, MenuComponent, ScheduleComponent, ErrorComponent, LocationComponent,FooterComponent,AboutUsComponent, OurProductsComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
