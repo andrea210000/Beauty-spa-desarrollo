@@ -2,9 +2,11 @@
 <div class="bg-[var(--white-beauty)] p-[0.5vw] pl-[1.5vw] pr-[1.5vw] font-[Nunito Sans]">
     <div class="flex justify-between items-center">
         <div class="flex items-center">
-            <img class="h-[3vw] cursor-pointer" src="/assets/images/beauty-logo.png" alt="logo Beauty Spa">
+            <img class="h-[3vw] cursor-pointer" (click)="navigateTo('')" src="/assets/images/beauty-logo.png"
+                alt="logo Beauty Spa">
             <a class="text-[1vw] pl-[1vw] font-semibold">Beauty Spa</a>
         </div>
+        <!-- Esta es la seccion de navegacion con sus rutas -->
         <nav class="flex gap-[2vw] text-[0.9vw] pr-[2vw]">
             <a class="cursor-pointer" (click)="navigateTo('')">Inicio</a>
             <a class="cursor-pointer" (click)="navigateTo('services')">Servicios</a>
@@ -13,32 +15,38 @@
             <a class="cursor-pointer" (click)="navigateTo('contact')">Contactanos</a>
             <a class="cursor-pointer" (click)="navigateTo('location')">Ubicanos</a>
         </nav>
+        <!-- Esta es la seccion de botones e interacciones (login, carrito, redes sociales) -->
         <div class="flex items-center justify-center">
             <div class="flex items-center justify-center">
-                <button class="cursor-pointer" (click)="openPopUp()">
+                <button class="mr-[1vw]" (click)="navigateTo('login')">
+                    <img class="h-[2.3vw] cursor-pointer" (click)="navigateTo('')" src="/assets/images/Insta-icon.png"
+                        alt="logo Beauty Spa">
+                </button>
+                <button class="mr-[1vw]" (click)="navigateTo('login')">
+                    <img class="h-[2.5vw] cursor-pointer" (click)="navigateTo('')" src="/assets/images/account-icon.png"
+                        alt="logo Beauty Spa">
+                </button>
+                <button class="cursor-pointer h-[2.5vw] pt-[0.2vw]" (click)="openPopUp()">
                     <img src="/assets/images/shopping-cart.png" alt="Carrito de compras" class="h-[2vw] pr-[1vw]">
                 </button>
             </div>
-            <button
-                class="text-[1vw] cursor-pointer bg-[#f9b9d9] p-[0.6vw] rounded-3xl w-[9vw] font-semibold text-[var(-dark-beauty-text)]"
-                (click)="navigateTo('schedule')">Agendar Cita</button>
         </div>
     </div>
 </div>
 <div class="flex items-center justify-center ">
-    <hr class="bg-[var(--pink-beauty)] border-0 h-[0.1vw] w-[97%] ">
+    <hr class="bg-[#f3a1c4] border-0 h-[0.1vw] w-[100%] ">
 </div>
-<!-- Esto es un pop up -->
+<!-- Esto es un pop-up, aqui se almacena la logica y funcionalidad del pop-up -->
 <div class="font-[Nunito Sans] text-[var(--dark-beauty-text)]" *ngIf="ShowPopUp">
     <div>
         <div class="fixed top-0 left-0 w-full h-full bg-black/50 z-20 ">
             <div class="flex justify-center items-center h-full">
                 <div class="bg-[var(--white-beauty)] h-[37vw] w-[60vw] rounded-xl">
                     <div class="flex justify-center p-[1vw]">
-                        <div class="font-semibold flex w-full items-center">
-                            <p class="text-[1.2vw]">Tu carrito de compras</p>
+                        <div class="font-semibold flex w-full items-center justify-center">
+                            <p class="text-[1.2vw]">Tus Compras</p>
                         </div>
-                        <div class="justify-end items-end flex w-full">
+                        <div class="justify-end items-end flex w-[25%]">
                             <button class="cursor-pointer" (click)="closePopUp()">
                                 <img class="h-[2.5vw]" src="/assets/images/close-button.png" alt="">
                             </button>
@@ -48,33 +56,62 @@
                         <hr class="h-[0.1vw] bg-[var(--pink-beauty)] border-0 w-[97%]">
                     </div>
                     <div class="flex justify-center items-center p-[0.5vw]">
-                        <div class="mt-[2vw] h-[29vw] w-[43vw]">
-                            <div class="border-[var(--pink-beauty)] border-2 rounded-xl h-[5.5vw] w-[40vw] items-center flex mb-[1vw]" *ngFor="let p of productos">
+                        <div class="mt-[2vw] h-[29vw] w-[43vw] overflow-y-auto">
+                            <div *ngFor="let p of cartService.carrito"
+                                class="border-[var(--pink-beauty)] border-2 rounded-xl h-[5.5vw] w-[40vw] items-center flex mb-[1vw]">
+
                                 <img [src]="p.image" alt="Producto" class="h-[4.5vw] w-[4.5vw] m-[0.5vw] rounded-xl">
+
                                 <div class="flex flex-col font-semibold">
-                                    <p class=" text-[0.9vw]">{{ p.name }}</p>
+                                    <p class="text-[0.9vw]">{{ p.name }}</p>
                                     <p class="text-[#f9b9d9]">{{ p.price }}</p>
                                     <p class="text-[#f9b9d9]">{{ p.size }}</p>
                                 </div>
+
                                 <app-counter-component class="ml-auto"></app-counter-component>
+
                                 <div class="flex items-center">
                                     <button class="cursor-pointer" (click)="onDeleteProduct(p.id)">
-                                        <img  src="/assets/images/trash.png" alt="Borrar" class="h-[2vw] m-[0.5vw]">
+                                        <img src="/assets/images/trash.png" alt="Borrar" class="h-[2vw] m-[0.5vw]">
                                     </button>
                                 </div>
+
                             </div>
-                            </div>
-                        <div class="w-[19vw] border-[var(--pink-beauty)] border-2 rounded-2xl ml-[1vw] mt-[1vw] h-[29vw] p-[1vw]">
+                        </div>
+                        <div
+                            class="w-[19vw] border-[var(--pink-beauty)] border-2 rounded-2xl ml-[1vw] mt-[2vw] h-[29vw] p-[1vw]">
                             <div>
-                                <p class="text-[0.9vw] font-semibold">Resumen de la compra</p>
+                                <p class="text-[1vw] font-semibold">Resumen de la Compra</p>
                             </div>
                             <div class="flex justify-between mt-[2vw]">
-                                <p class="text-[0.9vw] ">Subtotal:</p>
+                                <p class="text-[0.9vw] font-semibold ">Subtotal: {{cartService.getSubtotal()| currency: 'COP'}}</p>
+                            </div>
+                            <div class="flex justify-between mt-[2vw]">
+                                <p class="text-[0.9vw] font-semibold text-[#f3a1c4]">Impuestos: {{cartService.getImpuestos()|currency:'COP'}}</p>
+                            </div>
+                            <div class="flex justify-between mt-[2vw]">
+                                <p class="text-[0.9vw] font-semibold text-[#f3a1c4]">Envio a casa: {{cartService.getEnvio()|currency:'COP'}}</p>
+                            </div>
+                            <div class="flex justify-between mt-[3vw]">
+                                <p class="text-[0.9vw] font-semibold ">Total: {{cartService.getTotal()|currency:'COP'}}</p>
+                            </div>
+                            <button
+                                class="bg-[#f3a1c4] w-[100%] h-[2.5vw] mt-[2.5vw] rounded-[0.3vw] cursor-pointer font-bold text-[0.9vw] hover:bg-[#ff69b4] transition-colors transform">
+                                Continuar con el Pago
+                            </button>
+                            <button
+                                class="border-[#f3a1c4] border-2 w-[100%] h-[2.5vw] mt-[1vw] rounded-[0.3vw] cursor-pointer font-bold text-[0.9vw] text-[#f3a1c4] hover:bg-[#f3a1c4] transition-colors transform hover:text-[white] ">
+                                Continuar Comprando
+                            </button>
+                            <div class="flex justify-center mt-[1vw]">
+                                <a class="text-[0.7vw] font-semibold cursor-pointer text-[#f3a1c4]"
+                                    (click)="('')">Politica de Compras</a>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
