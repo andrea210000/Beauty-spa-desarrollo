@@ -1,9 +1,16 @@
+<!-- Componente de Agendar Cita HTML -->
+<!-- Esta página permite al usuario agendar una cita en el spa -->
 <div class="font-[Nunito Sans] h-screen flex items-center justify-center bg-[var(--white-beauty)] text-[var(--dark-beauty-text)] pt-[2vw] pb-[vw]">
+    <!-- Formulario de agendamiento -->
     <div class=" text-center h-[103%] p-4 rounded shadow-md w-[22vw] m-[4vw] ">
+        <!-- Título del formulario -->
         <div>
             <h1 class="text-[1.2vw] font-semibold mb-4">Agenda tu cita</h1>
         </div>
+
+        <!-- Campos del formulario: servicio, profesional, fecha, hora y datos personales -->
         <div class="space-y-4">
+            <!-- Selección de servicio y profesional -->
             <div>
                 <div class="flex w-full gap-4">
                     <div class="flex flex-col justify-start items-start w-[50%]">
@@ -23,13 +30,17 @@
                             <option value="servicio3">Profesional 3</option>
                         </select>
                     </div>
-                </div>
+                </div>Ca
+
+                <!-- Selector de fecha -->
                 <div class="flex flex-col  font-[Nunito Sans]">
                     <p class="pt-4 [0.9vw]">Selecciona fecha</p>
                     <mat-card class="W-[22vw] font-[Nunito Sans]">
                         <mat-calendar [(selected)]="selectedDate"></mat-calendar>
                     </mat-card>
                 </div>
+
+                <!-- Selector de hora -->
                 <div class="flex flex-col justify-start items-start [1vw] pt-2 ">
                     <p class="font-[0.9vw] pb-2">Hora</p>
                     <mat-form-field>

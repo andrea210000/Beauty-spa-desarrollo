@@ -9,8 +9,9 @@ body {
 }
 
 :root {
-    --pink-beauty: #f9ddeb;
+    --pink-beauty: #f3a1c4;
     --default-border-radius: 7px;
+    --pink-beauty-hover: #ff69b4;
 }
 
 :root {

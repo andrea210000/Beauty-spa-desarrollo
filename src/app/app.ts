@@ -10,12 +10,13 @@ import {ContactComponent} from './views/contact-component/contact-component';
 import {CounterComponent} from './views/shared/counter-component/counter-component';
 import {PaymentComponent} from './views/payment-component/payment-component';
 import {ServicesComponent} from './views/services-component/services-component';
+import { OurProductsComponent } from './views/our-products-component/our-products-component';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuComponent, ScheduleComponent, FooterComponent, AboutUsComponent, ErrorComponent, LocationComponent, ContactComponent, CounterComponent, PaymentComponent,ServicesComponent],
+  imports: [RouterOutlet, MenuComponent, ScheduleComponent, FooterComponent, AboutUsComponent, ErrorComponent, LocationComponent, ContactComponent, CounterComponent, PaymentComponent,ServicesComponent, OurProductsComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
