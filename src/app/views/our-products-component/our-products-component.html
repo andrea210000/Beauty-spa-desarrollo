@@ -1,4 +1,4 @@
-<div>
+<div class="bg-[#fdf2f8]">
     <div class="leading-relaxed text-lg">
         <div class="text-center ">
             <h1 class="text-[3vw] pt-[4vw] font-bold"> Nuestros Productos</h1>
@@ -12,7 +12,7 @@
         <div class="flex flex-wrap justify-center gap-10 mb-1">
 
             <div *ngFor="let p of getProductosPorCategoria('piel')"
-                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
+                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg bg-white hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
 
                 <div class="flex justify-center items-center cursor-pointer">
                     <img [src]="p.image" class="w-[20vw] h-[15vw] object-cover rounded-[9px] mt-[1vw]">
@@ -49,7 +49,7 @@
         <div class="flex flex-wrap justify-center gap-10 mb-1">
 
             <div *ngFor="let p of getProductosPorCategoria('cabello')"
-                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
+                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg bg-white hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
 
                 <div class="flex justify-center items-center cursor-pointer">
                     <img [src]="p.image" class="w-[20vw] h-[15vw] object-cover rounded-[9px] mt-[1vw]">
@@ -86,7 +86,7 @@
         <div class="flex flex-wrap justify-center gap-10 mb-1">
 
             <div *ngFor="let p of getProductosPorCategoria('belleza')"
-                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
+                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg bg-white hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
 
                 <div class="flex justify-center items-center cursor-pointer">
                     <img [src]="p.image" class="w-[20vw] h-[15vw] object-cover rounded-[9px] mt-[1vw]">

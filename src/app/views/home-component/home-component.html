@@ -1,7 +1,7 @@
 <div class="bg-[var(--white-beauty)] font-[Nunito Sans] m-0 p-0 box-border">
     <div class="w-full overflow-hidden relative">
         <ul class="flex animate-slide">
-            <li class="w-full shrink-0 relative ">
+            <li class="w-full shrink-0 relative " >
                 <img class="w-full h-[817px] object-cover " src="/assets/images/1.jpg" alt="">
                 <div class="absolute inset-0 flex flex-col justify-center items-center p-[3vw] bg-black/30 text-white">
                     <h2 class="font-bold text-[5vw] pb-[4vw]">Bienvenido a Beauty Spa</h2>
@@ -35,7 +35,7 @@
                     <div class="text-[1vw]">
                         <button
                             class="cursor-pointer bg-[#f9b9d9] p-[1vw] rounded-3xl w-[11vw] font-semibold text-[var(--dark-beauty-text)]" (click)="navigateTo('products')">
-                            Explorar Productos</button>
+                            Explorar <br> <br> Productos</button>
                     </div>
                 </div>
             </li>
@@ -52,8 +52,8 @@
         <div class="flex justify-center items-center p-4 gap-[6vw] flex-wrap">
             <div>
                 <div class="relative">
-                    <video class="h-[20vw] rounded-[9px] w-[24vw] object-cover  cursor-pointer"
-                        src="/assets/videos/facial-treatment.webm" autoplay muted loop></video>
+                    <video class="h-[20vw]  rounded-[9px] w-[24vw] object-cover  cursor-pointer" #videosa
+                        src="/assets/videos/facial-treatment.webm" autoplay muted loop playsinline></video>
                     <div
                         class="absolute h-[20vw] rounded-[9px] w-[24vw] hover:bg-pink-100/40 z-10 inset-0 cursor-pointer">
                     </div>
@@ -62,8 +62,8 @@
             </div>
             <div>
                 <div class="relative">
-                    <video class="h-[20vw] rounded-[9px] w-[24vw] object-cover cursor-pointer"
-                        src="/assets/videos/masagges-treatments.webm" autoplay muted loop></video>
+                    <video class="h-[20vw] rounded-[9px] w-[24vw] object-cover cursor-pointer" #videosa
+                        src="/assets/videos/masagges-treatments.webm" autoplay muted loop playsinline ></video>
                     <div
                         class="absolute h-[20vw] rounded-[9px] w-[24vw] hover:bg-pink-100/40 opacity-0 hover:opacity-100 z-10 inset-0 cursor-pointer transition-opacity duration-300 ease-in-out">
                     </div>
@@ -72,8 +72,8 @@
             </div>
             <div>
                 <div class="relative">
-                    <video class="h-[20vw] rounded-[9px] w-[24vw] object-cover cursor-pointer"
-                        src="/assets/videos/beauty-salon.webm" autoplay muted loop></video>
+                    <video class="h-[20vw]  rounded-[9px] w-[24vw] object-cover cursor-pointer" #videosa
+                        src="/assets/videos/beauty-salon.webm" autoplay muted loop playsinline ></video>
                     <div
                         class="absolute h-[20vw] rounded-[9px] w-[24vw] hover:bg-pink-100/40 opacity-0 hover:opacity-100 z-10 inset-0 cursor-pointer transition-opacity duration-300 ease-in-out">
                     </div>
