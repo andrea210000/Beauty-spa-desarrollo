@@ -1,4 +1,7 @@
+<!-- Componente de Pago HTML -->
+<!-- Esta página permite al usuario completar el pago de su compra -->
 <div class="bg-[#fdf2f8] font-[Nunito Sans] m-0 p-0 box-border">
+    <!-- Encabezado de la página de pago -->
     <div class="bg-[var(--white-beauty)] font-[Nunito Sans] shadow-sm border-b border-[var(--pink-beauty)] mb-[1vw]">
         <div class="max-w-5xl mx-auto px-4 py-6 ">
             <div class="text-2xl font-semibold tracking-tight">Pago seguro</div>
@@ -6,13 +9,14 @@
         </div>
     </div>
 
+    <!-- Sección: Formulario de pago y resumen del pedido -->
     <div class="max-w-5xl mx-auto px-4 py-8 bg-[#fdf2f8]">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 bg-[#fdf2f8]">
 
-            <!-- Detalles de pago + Dirección -->
+            <!-- Columna: Formulario de pago -->
             <div class="lg:col-span-2 space-y-6">
 
-                <!-- Detalles de pago -->
+                <!-- Formulario: Detalles de pago -->
                 <div class="bg-[#ffffff] shadow-sm rounded-lg  p-6">
                     <div class="text-lg font-medium">Detalles de pago</div>
                     <div class="mt-4 space-y-4">
@@ -48,7 +52,8 @@
                     </div>
                 </div>
 
-                <!-- Dirección de facturación -->
+                <!-- Formulario: Dirección de facturación -->
+                <!-- Permite al usuario ingresar su dirección para el envío -->
                 <div class="bg-[var(--white-beauty)]shadow-sm rounded-lg  p-6 bg-[#ffffff]">
                     <div class="text-lg font-medium">Dirección de facturación</div>
                     <div class="mt-4 space-y-4">
@@ -81,7 +86,8 @@
                     </div>
                 </div>
 
-                <!-- Botón de pago móvil -->
+                <!-- Botón de pago para versión móvil -->
+                <!-- Visible solo en pantallas pequeñas -->
                 <div class="lg:hidden bg-[#ffffff]">
                     <div
                         class="w-full inline-flex items-center justify-center rounded-md bg-pink-600 px-4 py-3 text-white font-medium hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500">
@@ -90,7 +96,8 @@
                 </div>
             </div>
 
-            <!-- Resumen del pedido -->
+            <!-- Columna: Resumen del pedido -->
+            <!-- Muestra los productos, subtotal, impuestos y total -->
             <div class="lg:col-span-1 ">
                 <div class="bg-[#ffffff] shadow-sm rounded-lg  p-6 space-y-4">
                     <div class="text-lg font-medium">Resumen del pedido</div>
