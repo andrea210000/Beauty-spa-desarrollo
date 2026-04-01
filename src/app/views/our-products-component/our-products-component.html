@@ -13,6 +13,7 @@
         </div>
 
         <!-- Contenedor de tarjetas de productos de piel -->
+        <div class="flex flex-wrap justify-center gap-10 mb-1">
 
             <div *ngFor="let p of getProductosPorCategoria('piel')"
                 class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg bg-white hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
@@ -45,6 +46,7 @@
         </div>
 
         <!-- Sección: Cuidado del Cabello -->
+        <div class="flex flex-wrap justify-center gap-10 mb-1">
         <div class="flex justify text-[1.5vw] space-x-2 mb-5 ml-12 mt-[3vw]">
             <hr class="border-t bg-[#f3a1c4] w-[0.3%] h-[2.5vw] ">
             <h3 class="font-semibold">Cuidado del Cabello </h3>
@@ -80,8 +82,6 @@
 
             </div>
 
-        </div>
-
         <!-- Sección: Productos de Belleza -->
         <div class="flex justify text-[1.5vw] space-x-2 mb-5 ml-12 mt-[3vw]">
             <hr class="border-t bg-[#f3a1c4] w-[0.3%] h-[2.5vw] ">
@@ -89,6 +89,7 @@
         </div>
 
         <!-- Contenedor de tarjetas de productos de belleza -->
+        <div class="flex flex-wrap justify-center gap-10 mb-1">
 
             <div *ngFor="let p of getProductosPorCategoria('belleza')"
                 class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg bg-white hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
