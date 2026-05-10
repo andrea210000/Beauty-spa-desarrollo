@@ -1,13 +1,19 @@
+<!-- Componente de Footer HTML -->
+<!-- Este es el pie de página que aparece en todas las páginas -->
 <div class="flex items-center justify-center "></div>
 <div class="font-[Nunito Sans] bg-[#faf7f7] p-[2vw]">
+    <!-- Línea divisoria -->
     <div class="flex items-center justify-center ">
         <hr class="bg-[var(--pink-beauty)] border-0 h-[0.1vw] w-[97%]  ">
     </div>
+
+    <!-- Contenido del footer: enlaces y copyright -->
     <div class="flex justify-between items-center pt-[1vw] ">
+        <!-- Enlaces de políticas y contacto -->
         <div class=" text-[6vw]flex space-x-4">
-            <a href="" class="">Politica de privacidad</a>
-            <a href="" class="">Terminos y condiciones</a>
-            <a href="" class="" (click)="navigateTo('contact')">Contacto</a>
+            <a href="" class="cursor-pointer hover:underline text-[#ff69b4]" (click)="navigateTo('privacy')">Politica de privacidad</a>
+            <a href="" class="cursor-pointer hover:underline text-[#ff69b4]" (click)="navigateTo('terms')">Terminos y condiciones</a>
+            <a href="" class="cursor-pointer hover:underline text-[#ff69b4]" (click)="navigateTo('contact')">Contacto</a>
         </div>
 
         <div class="text-sm">

@@ -7,6 +7,7 @@ import {ScheduleComponent } from './views/schedule-component/schedule-component'
 import {ContactComponent} from './views/contact-component/contact-component';
 import {PaymentComponent} from './views/payment-component/payment-component';
 import {ServicesComponent} from './views/services-component/services-component';
+import { OurProductsComponent } from './views/our-products-component/our-products-component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'services', component: ServicesComponent },
+  { path: 'products', component: OurProductsComponent },
   { path: 'home', component: HomeComponent },
   { path: '**', component: ErrorComponent },
   
