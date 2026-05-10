@@ -17,6 +17,7 @@ import { OurProductsComponent } from './views/our-products-component/our-product
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, MenuComponent, ScheduleComponent, FooterComponent, AboutUsComponent, ErrorComponent, LocationComponent, ContactComponent, CounterComponent, PaymentComponent,ServicesComponent, OurProductsComponent],
+
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
