@@ -11,12 +11,14 @@ import {CounterComponent} from './views/shared/counter-component/counter-compone
 import {PaymentComponent} from './views/payment-component/payment-component';
 import {ServicesComponent} from './views/services-component/services-component';
 import { OurProductsComponent } from './views/our-products-component/our-products-component';
+import { LoginComponent } from './views/login-component/login-component'; 
+import { RegisterComponent } from './views/register-component/register-component';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuComponent, ScheduleComponent, FooterComponent, AboutUsComponent, ErrorComponent, LocationComponent, ContactComponent, CounterComponent, PaymentComponent,ServicesComponent, OurProductsComponent],
+  imports: [RouterOutlet, MenuComponent, ScheduleComponent, FooterComponent, AboutUsComponent, ErrorComponent, LocationComponent, ContactComponent, CounterComponent, PaymentComponent,ServicesComponent, OurProductsComponent, LoginComponent, RegisterComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

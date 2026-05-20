@@ -2,9 +2,9 @@
 <div class="bg-[var(--white-beauty)] p-[0.5vw] pl-[1.5vw] pr-[1.5vw] font-[Nunito Sans]">
     <div class="flex justify-between items-center">
         <div class="flex items-center">
-            <img class="h-[3vw] cursor-pointer" (click)="navigateTo('')" src="/assets/images/beauty-logo.png"
+            <img class="h-[3vw] cursor-pointer" (click)="navigateTo('')" src="/assets/images/icon_2-removebg.png"
                 alt="logo Beauty Spa">
-            <a class="text-[1vw] pl-[1vw] font-semibold">Beauty Spa</a>
+            <a class="text-[1vw] font-semibold">Beauty Spa</a>
         </div>
         <!-- Esta es la seccion de navegacion con sus rutas -->
         <nav class="flex gap-[2vw] text-[0.9vw] pr-[2vw]">
@@ -18,12 +18,15 @@
         <!-- Esta es la seccion de botones e interacciones (login, carrito, redes sociales) -->
         <div class="flex items-center justify-center">
             <div class="flex items-center justify-center">
-                <button class="mr-[1vw]" (click)="navigateTo('login')">
-                    <img class="h-[2.3vw] cursor-pointer" (click)="navigateTo('')" src="/assets/images/Insta-icon.png"
+                <button class="mr-[1vw]">
+                    <a class="h-[2.3vw] cursor-pointer" href="https://www.instagram.com/projectbeautyspa081/" 
                         alt="logo Beauty Spa">
+                        <img class="h-[2.3vw] cursor-pointer" src="/assets/images/Insta-icon.png" alt="Instagram">
+
+                    </a>
                 </button>
                 <button class="mr-[1vw]" (click)="navigateTo('login')">
-                    <img class="h-[2.5vw] cursor-pointer" (click)="navigateTo('')" src="/assets/images/account-icon.png"
+                    <img class="h-[2.5vw] cursor-pointer" (click)="navigateTo('login')" src="/assets/images/account-icon.png"
                         alt="logo Beauty Spa">
                 </button>
                 <button class="cursor-pointer h-[2.5vw] pt-[0.2vw]" (click)="openPopUp()">
@@ -96,7 +99,7 @@
                                 <p class="text-[0.9vw] font-semibold ">Total: {{cartService.getTotal()|currency:'COP'}}</p>
                             </div>
                             <button
-                                class="bg-[#f3a1c4] w-[100%] h-[2.5vw] mt-[2.5vw] rounded-[0.3vw] cursor-pointer font-bold text-[0.9vw] hover:bg-[#ff69b4] transition-colors transform">
+                                class="bg-[#f3a1c4] w-[100%] h-[2.5vw] mt-[2.5vw] rounded-[0.3vw] cursor-pointer font-bold text-[0.9vw] hover:bg-[#ff69b4] transition-colors transform" (click)="navigateTo('payment')">
                                 Continuar con el Pago
                             </button>
                             <button
@@ -105,7 +108,7 @@
                             </button>
                             <div class="flex justify-center mt-[1vw]">
                                 <a class="text-[0.7vw] font-semibold cursor-pointer text-[#ff69b4] hover:underline "
-                                    (click)="('')">Politica de Compras</a>
+                                    (click)="navigateTo('policy')">Politica de Compras</a>
                             </div>
                         </div>
 
