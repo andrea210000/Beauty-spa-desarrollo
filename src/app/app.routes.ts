@@ -8,6 +8,9 @@ import {ContactComponent} from './views/contact-component/contact-component';
 import {PaymentComponent} from './views/payment-component/payment-component';
 import {ServicesComponent} from './views/services-component/services-component';
 import { OurProductsComponent } from './views/our-products-component/our-products-component';
+import { LoginComponent } from './views/login-component/login-component';
+import { RegisterComponent } from './views/register-component/register-component';
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -17,6 +20,9 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'products', component: OurProductsComponent },
+  { path: 'payment', component: PaymentComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: '**', component: ErrorComponent },
   

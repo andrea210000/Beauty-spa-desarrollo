@@ -1,0 +1,72 @@
+<!-- Seccion de login -->
+<div class=" p-[0.5vw] pl-[1.5vw] pr-[1.5vw] font-[Nunito Sans] h-screen w-full justify-center items-center flex"
+    style="background-image: url(assets/images/schedule-background.jpg); background-size: cover">
+    <div
+        class="flex items-center justify-center bg-[var(--white-beauty)] rounded-[1vw] w-[30vw] h-[40vw] flex-col gap-[1vw]">
+        <div class="flex items-center justify-start w-full ">
+            <h1 class="font-semibold text-[1.5vw] font-['Nunito Sans'] text-left pl-[2vw]">Crear cuenta</h1>
+        </div>
+        <div class="flex items-center justify-start w-full ">
+            <h2 class="font-normal text-[0.9vw] font-['Nunito Sans'] text-left pl-[2vw] text-[#ff69b4]">Unete a nuestra comunidad y comienza tu viaje de bienestar</h2>
+        </div>
+<!-- Seccion de input de nombre completo, con icono de usuario y diseño similar a los siguientes inputs. -->
+        <div class=" flex items-center justify-start w-full flex-col gap-[1vw]">
+            <label for="fullname"
+                class=" w-full pl-[2vw] pt-[0.5vw] font-['Nunito Sans'] font-semibold text-[0.9vw]">Nombre
+                completo</label>
+            <div class="w-[90%] justify-start items-center relative">
+                <input type="text" placeholder="Tu nombre completo"
+                    class="border border-[#f3a1c4] rounded-[0.5vw] w-[100%] p-[0.5vw] pl-[2vw] outline-none">
+                <img src="assets/images/account-icon.png" alt="User Icon"
+                    class="absolute left-[0.5vw] top-[50%] transform -translate-y-1/2 w-[1vw]">
+            </div>
+        </div>
+<!-- Seccion de input para email y contraseña, con iconos y funcionalidad de mostrar/ocultar contraseña, además de opciones para mantener sesión y recuperar contraseña. -->
+        <div class=" flex items-center justify-start w-full flex-col gap-[1vw]">
+            <label for="email"
+                class=" w-full pl-[2vw] pt-[1.5vw] font-['Nunito Sans'] font-semibold text-[0.9vw]">Correo
+                electrónico</label>
+            <div class="w-[90%] justify-start items-center relative">
+                <input type="email" placeholder="tu@email.com"
+                    class="border border-[#f3a1c4] rounded-[0.5vw] w-[100%] p-[0.5vw] pl-[2vw] outline-none">
+                <img src="assets/images/email-icon.png" alt="Email Icon"
+                    class="absolute left-[0.5vw] top-[50%] transform -translate-y-1/2 w-[1vw]">
+            </div>
+            <label for="password"
+                class=" w-full pl-[2vw] pt-[1vw] font-['Nunito Sans'] font-semibold text-[0.9vw]">Contraseña</label>
+            <div class="w-[90%] justify-start items-center relative">
+                <input [type]="mostrarPassword ? 'text' : 'password'" placeholder="********"
+                    class="border border-[#f3a1c4] rounded-[0.5vw] w-[100%] p-[0.5vw] pl-[2vw] outline-none">
+                <img src="assets/images/password-icon.png" alt="Password Icon"
+                    class="absolute left-[0.4vw] top-[50%] transform -translate-y-1/2 w-[1.5vw]">
+                <img *ngIf="!mostrarPassword" (click)="toggleMostrar()" src="assets/images/eye-icon.png" alt="Eye Icon"
+                    class="absolute right-[0.5vw] top-[50%] transform -translate-y-1/2 w-[2vw] cursor-pointer">
+                <img *ngIf="mostrarPassword" (click)="toggleMostrar()" src="assets/images/eye-off-icon.png"
+                    alt="Eye Off Icon"
+                    class="absolute right-[0.5vw] top-[50%] transform -translate-y-1/2 w-[2vw] cursor-pointer">
+            </div>
+        </div>
+<!-- Seccion de botones para crear cuenta, continuar con google o iniciar sesion -->
+        <div class="w-[90%] flex items-center justify-center pt-[-1vw]">
+            <button
+                class="bg-[#ff69b4] w-[100%] h-[2.5vw] mt-[1vw] text-[#ffffff] rounded-[1.3vw] cursor-pointer font-bold text-[0.9vw] hover:bg-[#f3a1c4] transition-colors transform hover:text-[black]">
+                Crear cuenta 
+            </button>
+        </div>
+        <div class="w-full justify-center items-center pt-[1vw]">
+            <h2 class="text-center font-['Nunito Sans'] text-[0.9vw]">O continua con</h2>
+        </div>
+        <div class="justify-center items-center flex w-full">
+            <button class="flex items-center justify-center gap-[0.8vw] bg-[#ffffff] border border-gray-300 rounded-[0.5vw] w-[25vw] h-[2.5vw] mt-[0.5vw] text-[#3c4043] cursor-pointer text-[0.9vw] hover:bg-gray-100 hover:border-gray-400 transition-colors shadow-sm">
+                <img src="assets/images/google-icon.png" alt="Google Icon" class="w-[1.2vw]">
+                <span class="font-medium">Continuar con Google</span>
+            </button>
+        </div>
+<!-- seccion de texto para redirigir a login si ya tiene cuenta, con diseño similar al login-component.html. -->
+        <div class="w-full justify-center items-center pt-[0.5vw] flex gap-[0.5vw]">
+                <span class="text-[0.9vw] text-[#ff69b4]">¿Ya tienes una cuenta?</span>
+                <span class="text-[0.9vw] text-[#ff69b4] hover:underline cursor-pointer" (click)="navigateTo('login')">
+                    Inicia sesión</span>
+        </div>
+    </div>
+</div>
