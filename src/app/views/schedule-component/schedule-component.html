@@ -1,73 +1,81 @@
 <!-- Componente de Agendar Cita HTML -->
-<!-- Esta página permite al usuario agendar una cita en el spa -->
-<div class="font-[Nunito Sans] h-screen flex items-center justify-center bg-[var(--white-beauty)] text-[var(--dark-beauty-text)] pt-[2vw] pb-[vw]">
+<div class="font-[Nunito Sans] h-screen flex items-center justify-center bg-[var(--white-beauty)] text-[var(--dark-beauty-text)] pt-[2vw] pb-[1vw] h-screen flex items-center justify-center bg-gradient-to-r from-pink-25 via-pink-70 to-pink-25 text-[var(--dark-beauty-text)]">
+    <!-- contenido -->
     <!-- Formulario de agendamiento -->
-    <div class=" text-center h-[103%] p-4 rounded shadow-md w-[22vw] m-[4vw] ">
+    <div class="text-center h-[103%] p-4 rounded shadow-md w-[22vw] m-[4vw]">
         <!-- Título del formulario -->
         <div>
             <h1 class="text-[1.2vw] font-semibold mb-4">Agenda tu cita</h1>
         </div>
 
-        <!-- Campos del formulario: servicio, profesional, fecha, hora y datos personales -->
+        <!-- Campos del formulario -->
         <div class="space-y-4">
             <!-- Selección de servicio y profesional -->
+            <div class="flex w-full gap-4">
+                <div class="flex flex-col justify-start items-start w-[50%]">
+                    <label for="servicio" class="text-[0.9vw] pb-[0.2vw]">Servicio</label>
+                    <select id="servicio" class="border w-full p-3 rounded-[7px] border-[var(--pink-beauty)] text-[0.7vw]" required>
+                        <option value="servicio1">1. Corte y Estilo</option>
+                        <option value="servicio2">2. Coloracion</option>
+                        <option value="servicio3">3. Tratamiento capilar</option>
+                        <option value="servicio4">4. Manicura</option>
+                        <option value="servicio5">5. Pedicura</option>
+                        <option value="servicio6">6. Uñas</option>
+                        <option value="servicio7">7. Faciales</option>
+                        <option value="servicio8">8. Masajes</option>
+                        <option value="servicio9">9. Depilacion</option>
+                    </select>
+                </div>
+                <div class="flex flex-col justify-start items-start w-[50%]">
+                    <label for="profesional" class="text-[0.9vw] pb-[0.2vw]">Profesional</label>
+                    <select id="profesional" class="border w-full p-3 rounded-[var(--default-border-radius)] border-[var(--pink-beauty)] text-[0.7vw]" required>
+                        <option value="Profesional 1">Angela Ruiz</option>
+                        <option value="Profesional 2">Diana Beltran</option>
+                        <option value="Profesional 3">Andres Walton</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Selector de fecha -->
+            <div class="flex flex-col font-[Nunito Sans]">
+                <label class="pt-4 text-[1.0vw]">Selecciona fecha</label>
+                <mat-card class="w-[20vw] font-[Nunito Sans]">
+                    <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+                </mat-card>
+            </div>
+
+            <!-- Selector de hora -->
+            <div class="flex flex-col justify-start items-start pt-2">
+                <label class="text-[1.0vw] pb-2">Hora</label>
+                <mat-form-field>
+                    <mat-label>Elige una Hora</mat-label>
+                    <input matInput [matTimepicker]="picker" required>
+                    <mat-timepicker-toggle matIconSuffix [for]="picker"></mat-timepicker-toggle>
+                    <mat-timepicker #picker></mat-timepicker>
+                </mat-form-field>
+            </div>
+
+            <!-- Datos personales -->
+            <div class="flex flex-col items-start w-full">
+                <label for="nombre" class="pb-2 pt-1">Nombre</label>
+                <input id="nombre" type="text" required class="w-full p-2 rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]"/>
+            </div>
+            <div class="flex flex-col items-start w-full">
+                <label for="email" class="pb-2">Correo</label>
+                <input id="email" type="email" required class="w-full p-2 rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]"/>
+            </div>
+            <div class="flex flex-col items-start w-full">
+                <label for="telefono" class="pb-2">Número de teléfono</label>
+                <input id="telefono" type="tel" maxlength="10" pattern="[0-9]{10}" required class="w-full p-2 rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]"/>
+            </div>
+
+            <!-- Botón de envío -->
             <div>
-                <div class="flex w-full gap-4">
-                    <div class="flex flex-col justify-start items-start w-[50%]">
-                        <p class="text-[0.9vw] pb-[0.2vw]">Servicio</p>
-                        <select class="border w-full p-3 rounded-[7px] border-[var(--pink-beauty)] text-[0.7vw]" name="Selecciona un servicio">
-                            <option value="servicio1">Selecciona un servicio</option>
-                            <option value="servicio2">Servicio 2</option>
-                            <option value="servicio3">Servicio 3</option>
-                        </select>
-                    </div>
-                    <div class="flex flex-col justify-start items-start w-[50%]">
-                        <p class="text-[0.9vw] pb-[0.2vw]">Profesional</p>
-                        <select
-                            class="border w-full p-3 rounded-[var(--default-border-radius)] border-[var(--pink-beauty)] text-[0.7vw]" name="Selecciona un profesional">
-                            <option value="servicio1">Cualquier Disponible</option>
-                            <option value="servicio2">Profesional 2</option>
-                            <option value="servicio3">Profesional 3</option>
-                        </select>
-                    </div>
-                </div>Ca
-
-                <!-- Selector de fecha -->
-                <div class="flex flex-col  font-[Nunito Sans]">
-                    <p class="pt-4 [0.9vw]">Selecciona fecha</p>
-                    <mat-card class="W-[22vw] font-[Nunito Sans]">
-                        <mat-calendar [(selected)]="selectedDate"></mat-calendar>
-                    </mat-card>
-                </div>
-
-                <!-- Selector de hora -->
-                <div class="flex flex-col justify-start items-start [1vw] pt-2 ">
-                    <p class="font-[0.9vw] pb-2">Hora</p>
-                    <mat-form-field>
-                        <mat-label>Elige una Hora</mat-label>
-                        <input matInput [matTimepicker]="picker">
-                        <mat-timepicker-toggle matIconSuffix [for]="picker" />
-                        <mat-timepicker #picker />
-                    </mat-form-field>
-                </div>
-                <div class="flex flex-col items-start w-full">
-                    <p class="pb-2 pt-1">Nombre</p>
-                    <input type="text" class="w-full p-2 rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]"/>
-                </div>
-                <div class="flex flex-col items-start w-full">
-                    <p>Correo</p>
-                    <input type="text" class="w-full p-2 rounded rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]" />
-                </div>
-                <div class="flex flex-col items-start">
-                    <p>Número de teléfono</p>
-                    <input type="tel" maxlength="10" pattern="[0-9]{10}" class="w-full p-2 rounded rounded rounded border rounded-[var(--default-border-radius)] border-[var(--pink-beauty)]" />
-                </div>
-                <div>
-                    <button class="bg-[#f9b9d9] cursor-pointer w-[20.3vw] font-bold py-2 px-4 rounded mt-4">
-                        Agendar tu cita
-                    </button>
-                </div>
+                <button type="submit" class="bg-[#f9b9d9] cursor-pointer w-[20.3vw] font-bold py-2 px-4 rounded mt-4">
+                    Agendar tu cita
+                </button>
             </div>
         </div>
     </div>
 </div>
+

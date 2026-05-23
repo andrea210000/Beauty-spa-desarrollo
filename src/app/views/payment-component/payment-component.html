@@ -1,143 +1,225 @@
 <!-- Componente de Pago HTML -->
-<!-- Esta página permite al usuario completar el pago de su compra -->
 <div class="bg-[#fdf2f8] font-[Nunito Sans] m-0 p-0 box-border">
-    <!-- Encabezado de la página de pago -->
-    <div class="bg-[var(--white-beauty)] font-[Nunito Sans] shadow-sm border-b border-[var(--pink-beauty)] mb-[1vw]">
-        <div class="max-w-5xl mx-auto px-4 py-6 ">
-            <div class="text-2xl font-semibold tracking-tight">Pago seguro</div>
-            <div class="mt-1 text-sm text-gray-600">Transacción segura y encriptada</div>
+
+    <!-- Encabezado -->
+    <header class="bg-white shadow-sm border-b border-pink-300 mb-4">
+        <div class="max-w-5xl mx-auto px-4 py-6">
+            <h1 class="text-2xl font-semibold tracking-tight">Pago seguro</h1>
+            <p class="mt-1 text-sm text-gray-600">Transacción segura y encriptada</p>
         </div>
-    </div>
+    </header>
 
-    <!-- Sección: Formulario de pago y resumen del pedido -->
-    <div class="max-w-5xl mx-auto px-4 py-8 bg-[#fdf2f8]">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 bg-[#fdf2f8]">
+    <!-- Contenido principal -->
+    <main class="max-w-5xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            <!-- Columna: Formulario de pago -->
-            <div class="lg:col-span-2 space-y-6">
+            <!-- Formulario de pago -->
+            <section class="lg:col-span-2 space-y-6">
 
-                <!-- Formulario: Detalles de pago -->
-                <div class="bg-[#ffffff] shadow-sm rounded-lg  p-6">
-                    <div class="text-lg font-medium">Detalles de pago</div>
-                    <div class="mt-4 space-y-4">
+                <!-- Detalles de pago -->
+                <form class="bg-white shadow-sm rounded-lg p-6 space-y-4">
+                    <h2 class="text-lg font-medium">Detalles de pago</h2>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nombre en la tarjeta</label>
+                        <input type="text" required
+                            class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                            placeholder="Nombre Apellido" />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Número de tarjeta</label>
+                        <input type="text" required maxlength="19"
+                            class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                            placeholder="1234 5678 9012 3456" />
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div>
-                            <div class="block text-sm font-medium text-gray-700">Nombre en la tarjeta</div>
-                            <div><input type="text"
-                                    class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
-                                    placeholder="Nombre Apellido" /></div>
+                            <label class="block text-sm font-medium text-gray-700">Fecha de vencimiento</label>
+                            <input type="text" required maxlength="5"
+                                class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                placeholder="MM/AA" />
                         </div>
                         <div>
-                            <div class="block text-sm font-medium text-gray-700">Número de tarjeta</div>
-                            <div><input type="text"
-                                    class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
-                                    placeholder="1234 5678 9012 3456" /></div>
+                            <label class="block text-sm font-medium text-gray-700">CVV</label>
+                            <input type="password" required maxlength="4"
+                                class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                placeholder="•••" />
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div>
-                                <div class="block text-sm font-medium text-gray-700">Fecha de vencimiento</div>
-                                <div><input type="text"
-                                        class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
-                                        placeholder="MM/AA" /></div>
-                            </div>
-                            <div>
-                                <div class="block text-sm font-medium text-gray-700">CVV</div>
-                                <div><input type="password"
-                                        class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
-                                        placeholder="•••" /></div>
-                            </div>
-                            <div class="flex items-start sm:items-center sm:justify-end">
-                                <div class="text-xs text-gray-500 sm:text-right">Transacción segura y encriptada</div>
-                            </div>
+                        <div class="flex items-center justify-end">
+                            <p class="text-xs text-gray-500">Transacción segura y encriptada</p>
                         </div>
                     </div>
-                </div>
+                </form>
 
-                <!-- Formulario: Dirección de facturación -->
-                <!-- Permite al usuario ingresar su dirección para el envío -->
-                <div class="bg-[var(--white-beauty)]shadow-sm rounded-lg  p-6 bg-[#ffffff]">
-                    <div class="text-lg font-medium">Dirección de facturación</div>
-                    <div class="mt-4 space-y-4">
+                <!-- Dirección de facturación -->
+                <form class="bg-white shadow-sm rounded-lg p-6 space-y-4">
+                    <h2 class="text-lg font-medium">Dirección de facturación</h2>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Dirección</label>
+                        <input type="text" required
+                            class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                            placeholder="Calle Falsa 123" />
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div>
-                            <div class="block text-sm font-medium text-gray-700">Dirección</div>
-                            <div><input type="text"
-                                    class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
-                                    placeholder="Calle Falsa 123" /></div>
+                            <label class="block text-sm font-medium text-gray-700">Ciudad</label>
+                            <input type="text" required
+                                class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                placeholder="Ciudad" />
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div>
-                                <div class="block text-sm font-medium text-gray-700">Ciudad</div>
-                                <div><input type="text"
-                                        class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
-                                        placeholder="Ciudad" /></div>
-                            </div>
-                            <div>
-                                <div class="block text-sm font-medium text-gray-700">Código postal</div>
-                                <div><input type="text"
-                                        class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
-                                        placeholder="12345" /></div>
-                            </div>
-                            <div>
-                                <div class="block text-sm font-medium text-gray-700">País</div>
-                                <div><input type="text"
-                                        class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
-                                        placeholder="País" /></div>
-                            </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Código postal</label>
+                            <input type="text" required maxlength="10"
+                                class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                placeholder="12345" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">País</label>
+                            <input type="text" required
+                                class="mt-1 w-full rounded-md border-gray-300 focus:border-pink-500 focus:ring-pink-500"
+                                placeholder="País" />
                         </div>
                     </div>
-                </div>
+                </form>
 
-                <!-- Botón de pago para versión móvil -->
-                <!-- Visible solo en pantallas pequeñas -->
-                <div class="lg:hidden bg-[#ffffff]">
-                    <div
+                <!-- Botón móvil -->
+                <div class="lg:hidden bg-white p-4 rounded-lg shadow-sm">
+                    <button type="submit"
                         class="w-full inline-flex items-center justify-center rounded-md bg-pink-600 px-4 py-3 text-white font-medium hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500">
-                        Pagar $162.00</div>
-                    <div class="mt-2 text-xs text-gray-500">Al continuar, aceptas una transacción segura.</div>
+                        Pagar $162.00
+                    </button>
+                    <p class="mt-2 text-xs text-gray-500">Al continuar, aceptas una transacción segura.</p>
                 </div>
-            </div>
+            </section>
 
-            <!-- Columna: Resumen del pedido -->
-            <!-- Muestra los productos, subtotal, impuestos y total -->
-            <div class="lg:col-span-1 ">
-                <div class="bg-[#ffffff] shadow-sm rounded-lg  p-6 space-y-4">
-                    <div class="text-lg font-medium">Resumen del pedido</div>
+            <!-- Resumen del pedido -->
+            <aside class="lg:col-span-1">
+                <div class="bg-white shadow-sm rounded-lg p-6 space-y-4">
+                    <h2 class="text-lg font-medium">Resumen del pedido</h2>
+
                     <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div class="text-sm text-gray-700">Masaje relajante</div>
-                            <div class="text-sm font-medium">$60.00</div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-700">Masaje relajante</span>
+                            <span class="font-medium">$60.00</span>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="text-sm text-gray-700">Facial hidratante</div>
-                            <div class="text-sm font-medium">$50.00</div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-700">Facial hidratante</span>
+                            <span class="font-medium">$50.00</span>
                         </div>
-                        <div class="flex items-center justify-center ">
-                            <hr class="bg-[var(--pink-beauty)] border-0 h-[0.1vw] w-[97%]  ">
-                        </div>
-                        <div class="pt-3 space-y-2">
-                            <div class="flex items-center justify-between text-sm">
-                                <div class="text-gray-600">Subtotal</div>
-                                <div class="font-medium">$110.00</div>
+
+                        <hr class="border-pink-300 my-2">
+
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Subtotal</span>
+                                <span class="font-medium">$110.00</span>
                             </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <div class="text-gray-600">Impuestos</div>
-                                <div class="font-medium">$52.00</div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Impuestos</span>
+                                <span class="font-medium">$52.00</span>
                             </div>
-                            <div class="flex items-center justify-between text-base font-semibold pt-2">
-                                <div>Total</div>
-                                <div>$162.00</div>
+                            <div class="flex justify-between text-base font-semibold pt-2">
+                                <span>Total</span>
+                                <span>$162.00</span>
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="mt-4 w-full inline-flex items-center justify-center rounded-md bg-[#f3a1c4] cursor-pointer px-4 py-3 text-white font-medium hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500">
-                        Pagar $162.00</div>
-                    <div class="mt-2 text-xs text-gray-500">Transacción segura y encriptada</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="max-w-5xl mx-auto px-4 pb-10">
-        <div class="text-xs text-gray-500">Beauty Spa © 2025. Todos los derechos reservados.</div>
-    </div>
-</div>
+                    <button type="submit"
+                        class="mt-4 w-full inline-flex items-center justify-center rounded-md bg-pink-500 px-4 py-3 text-white font-medium hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        Pagar $162.00
+                    </button>
+                    <p class="mt-2 text-xs text-gray-500">Transacción segura y encriptada</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+
+
+
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos y Condiciones - Beauty Spa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-pink-400 text-white px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold">Beauty Spa</div>
+    <ul class="flex space-x-6">
+      <li><a href="#" class="hover:text-gray-200">Home</a></li>
+      <li><a href="#" class="hover:text-gray-200">Services</a></li>
+      <li><a href="#" class="hover:text-gray-200">About Us</a></li>
+      <li><a href="#" class="hover:text-gray-200">Contact</a></li>
+    </ul>
+    <button class="bg-white text-pink-500 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">
+      Book Now
+    </button>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center py-10 bg-pink-100">
+    <h1 class="text-4xl font-bold text-pink-600">Términos y Condiciones</h1>
+    <p class="text-gray-600 mt-2">Última actualización: 24 de Octubre, 2023</p>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-4xl mx-auto px-6 py-10 space-y-8">
+    <section>
+      <h2 class="text-2xl font-semibold text-pink-500">1. Aceptación de los Términos</h2>
+      <p>Al reservar una cita o utilizar cualquiera de nuestros servicios, usted confirma que ha leído, entendido y aceptado estar sujeto a estos Términos y Condiciones en su totalidad.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-pink-500">2. Descripción de los Servicios</h2>
+      <p>Beauty Spa ofrece una variedad de servicios de belleza y bienestar, incluyendo tratamientos faciales, masajes, manicuras, pedicuras y terapias de spa.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-pink-500">3. Cuentas de Usuario y Seguridad</h2>
+      <p>Para acceder a ciertas funciones, como la reserva en línea, es posible que deba crear una cuenta. Usted es responsable de mantener la confidencialidad de su información.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-pink-500">4. Política de Pagos y Cancelaciones</h2>
+      <p>Los precios pueden cambiar. Se requiere pago al momento del servicio. Cancelaciones deben hacerse con al menos 24 horas de antelación.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-pink-500">5. Propiedad Intelectual</h2>
+      <p>Todo el contenido de este sitio web es propiedad de Beauty Spa y está protegido por las leyes de derechos de autor.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-pink-500">6. Limitación de Responsabilidad</h2>
+      <p>Beauty Spa no será responsable de reacciones alérgicas si el cliente no revela condiciones médicas pertinentes antes del servicio.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-pink-500">7. Ley Aplicable</h2>
+      <p>Estos términos se regirán por las leyes de la jurisdicción en la que se encuentra Beauty Spa.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-pink-500">8. Contacto</h2>
+      <p>Si tiene alguna pregunta, puede escribirnos a <a href="mailto:contacto@beautyspa.com" class="text-pink-600 underline">contacto@beautyspa.com</a>.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-pink-400 text-white text-center py-6 mt-10">
+    <p>&copy; 2023 Beauty Spa. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
