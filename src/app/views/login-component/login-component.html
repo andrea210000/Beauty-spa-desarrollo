@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <!-- Seccion de login -->
 <div class=" p-[0.5vw] pl-[1.5vw] pr-[1.5vw] font-[Nunito Sans] h-screen w-full justify-center items-center flex"
     style="background-image: url(assets/images/login-background.png); background-size: cover">
@@ -11,11 +12,10 @@
                 para continuar tu viaje de bienestar</h2>
         </div>
         <div class=" flex items-center justify-start w-full flex-col gap-[1vw]">
-            <label for="email"
-                class=" w-full pl-[2vw] pt-[1.5vw] font-['Nunito Sans'] font-semibold text-[0.9vw]">Correo
-                electrónico</label>
+            <label for="usuario"
+                class=" w-full pl-[2vw] pt-[1.5vw] font-['Nunito Sans'] font-semibold text-[0.9vw]">Usuario</label>
             <div class="w-[90%] justify-start items-center relative">
-                <input type="email" placeholder="tu@email.com"
+                <input type="text" placeholder="Tu nombre de usuario" [(ngModel)]="usuario" name="usuario"
                     class="border border-[#f3a1c4] rounded-[0.5vw] w-[100%] p-[0.5vw] pl-[2vw] outline-none">
                 <img src="assets/images/email-icon.png" alt="Email Icon"
                     class="absolute left-[0.5vw] top-[50%] transform -translate-y-1/2 w-[1vw]">
@@ -23,7 +23,7 @@
             <label for="password"
                 class=" w-full pl-[2vw] pt-[1vw] font-['Nunito Sans'] font-semibold text-[0.9vw]">Contraseña</label>
             <div class="w-[90%] justify-start items-center relative">
-                <input [type]="mostrarPassword ? 'text' : 'password'" placeholder="********"
+                <input [type]="mostrarPassword ? 'text' : 'password'" placeholder="********" [(ngModel)]="contrasena" name="contrasena"
                     class="border border-[#f3a1c4] rounded-[0.5vw] w-[100%] p-[0.5vw] pl-[2vw] outline-none">
                 <img src="assets/images/password-icon.png" alt="Password Icon"
                     class="absolute left-[0.4vw] top-[50%] transform -translate-y-1/2 w-[1.5vw]">
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="w-[90%] flex items-center justify-center pt-[-1vw]">
-            <button
+            <button (click) = "onSubmit()"
                 class="bg-[#ff69b4] w-[100%] h-[2.5vw] mt-[1.5vw] text-[#ffffff] rounded-[1.3vw] cursor-pointer font-bold text-[0.9vw] hover:bg-[#f3a1c4] transition-colors transform hover:text-[black]">
                 Iniciar Sesión 
             </button>
