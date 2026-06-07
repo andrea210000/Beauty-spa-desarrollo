@@ -1,8 +1,16 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,200;0,400;0,700;1,200;1,400;1,700&family=Playpen+Sans:wght@100..800&display=swap');
+=======
 @import url('https://cdn.jsdelivr.net/npm/primeicons@7.0.0/primeicons.css');
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playpen+Sans:wght@100..800&display=swap');
+>>>>>>> cdc05dadaf96b5b4b436964433ec256f080b7b10
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* tus estilos personalizados van después */
 
 body {
     font-family: 'Nunito Sans', sans-serif;
@@ -13,13 +21,7 @@ body {
     --pink-beauty: #f3a1c4;
     --default-border-radius: 7px;
     --pink-beauty-hover: #ff69b4;
-}
-
-:root {
     --dark-beauty-text: #333333;
-}
-
-:root {
     --white-beauty: #faf7f7;
 }
 
@@ -72,30 +74,14 @@ mat-form-field {
 }
 
 @keyframes slide {
-    0% {
-        transform: translateX(0%);
-    }
-
-    33% {
-        transform: translateX(0%);
-    }
-
-    38% {
-        transform: translateX(-100%);
-    }
-
-    71% {
-        transform: translateX(-100%);
-    }
-
-    76% {
-        transform: translateX(-200%);
-    }
-
-    100% {
-        transform: translateX(-200%);
-    }
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(0%); }
+    38% { transform: translateX(-100%); }
+    71% { transform: translateX(-100%); }
+    76% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
 }
+
 .animate-slide {
     animation: slide 18s infinite ease-in-out;
 }
@@ -107,6 +93,8 @@ mat-form-field {
 .zoom-hover:hover {
     transform: scale(1.05); 
 }
+<<<<<<< HEAD
+=======
 
 .p-toast {
   width: 400px;
@@ -208,3 +196,4 @@ mat-form-field {
 .p-toast .p-toast-message {
   animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
+>>>>>>> cdc05dadaf96b5b4b436964433ec256f080b7b10
