@@ -27,6 +27,11 @@
                 "input": "public",
                 "glob": "**/*",
                 "output": "."
+              },
+              {
+                "input": "node_modules/primeicons/fonts",
+                "glob": "**/*",
+                "output": "assets/fonts"
               }
             ],
             "styles": [

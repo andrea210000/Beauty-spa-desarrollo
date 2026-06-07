@@ -1,0 +1,66 @@
+<p-toast></p-toast>
+<!-- Seccion de login -->
+<div class=" p-[0.5vw] pl-[1.5vw] pr-[1.5vw] font-[Nunito Sans] h-screen w-full justify-center items-center flex"
+    style="background-image: url(assets/images/login-background.png); background-size: cover">
+    <div
+        class="flex items-center justify-center bg-[var(--white-beauty)] rounded-[1vw] w-[30vw] h-[40vw] flex-col gap-[1vw]">
+        <div class="flex items-center justify-start w-full ">
+            <h1 class="font-semibold text-[1.5vw] font-['Nunito Sans'] text-left pl-[2vw]">Bienvenido de nuevo</h1>
+        </div>
+        <div class="flex items-center justify-start w-full ">
+            <h2 class="font-normal text-[0.9vw] font-['Nunito Sans'] text-left pl-[2vw] text-[#ff69b4]">Inicia sesión
+                para continuar tu viaje de bienestar</h2>
+        </div>
+        <div class=" flex items-center justify-start w-full flex-col gap-[1vw]">
+            <label for="usuario"
+                class=" w-full pl-[2vw] pt-[1.5vw] font-['Nunito Sans'] font-semibold text-[0.9vw]">Usuario</label>
+            <div class="w-[90%] justify-start items-center relative">
+                <input type="text" placeholder="Tu nombre de usuario" [(ngModel)]="usuario" name="usuario"
+                    class="border border-[#f3a1c4] rounded-[0.5vw] w-[100%] p-[0.5vw] pl-[2vw] outline-none">
+                <img src="assets/images/email-icon.png" alt="Email Icon"
+                    class="absolute left-[0.5vw] top-[50%] transform -translate-y-1/2 w-[1vw]">
+            </div>
+            <label for="password"
+                class=" w-full pl-[2vw] pt-[1vw] font-['Nunito Sans'] font-semibold text-[0.9vw]">Contraseña</label>
+            <div class="w-[90%] justify-start items-center relative">
+                <input [type]="mostrarPassword ? 'text' : 'password'" placeholder="********" [(ngModel)]="contrasena" name="contrasena"
+                    class="border border-[#f3a1c4] rounded-[0.5vw] w-[100%] p-[0.5vw] pl-[2vw] outline-none">
+                <img src="assets/images/password-icon.png" alt="Password Icon"
+                    class="absolute left-[0.4vw] top-[50%] transform -translate-y-1/2 w-[1.5vw]">
+                <img *ngIf="!mostrarPassword" (click)="toggleMostrar()" src="assets/images/eye-icon.png" alt="Eye Icon"
+                    class="absolute right-[0.5vw] top-[50%] transform -translate-y-1/2 w-[2vw] cursor-pointer">
+                <img *ngIf="mostrarPassword" (click)="toggleMostrar()" src="assets/images/eye-off-icon.png"
+                    alt="Eye Off Icon"
+                    class="absolute right-[0.5vw] top-[50%] transform -translate-y-1/2 w-[2vw] cursor-pointer">
+            </div>
+            <div class="w-full flex items-center justify-between px-[2vw] pt-[0.5vw]">
+                <div class="flex items-center gap-[0.5vw]">
+                    <input type="checkbox" id="Recordar" [(ngModel)]="recordarSesion">
+                    <label for="Recordar" class="text-[0.9vw] text-[#ff69b4]">Mantener Sesión</label>
+                </div>
+                <h2 class="text-[0.9vw] text-[#ff69b4] hover:underline cursor-pointer" (click)="navigateTo('')">
+                    ¿Olvidaste tu contraseña?</h2>
+            </div>
+        </div>
+        <div class="w-[90%] flex items-center justify-center pt-[-1vw]">
+            <button (click) = "onSubmit()"
+                class="bg-[#ff69b4] w-[100%] h-[2.5vw] mt-[1.5vw] text-[#ffffff] rounded-[1.3vw] cursor-pointer font-bold text-[0.9vw] hover:bg-[#f3a1c4] transition-colors transform hover:text-[black]">
+                Iniciar Sesión 
+            </button>
+        </div>
+        <div class="w-full justify-center items-center pt-[1vw]">
+            <h2 class="text-center font-['Nunito Sans'] text-[0.9vw]">O continua con</h2>
+        </div>
+        <div class="justify-center items-center flex w-full">
+            <button class="flex items-center justify-center gap-[0.8vw] bg-[#ffffff] border border-gray-300 rounded-[0.5vw] w-[25vw] h-[2.5vw] mt-[0.5vw] text-[#3c4043] cursor-pointer text-[0.9vw] hover:bg-gray-100 hover:border-gray-400 transition-colors shadow-sm">
+                <img src="assets/images/google-icon.png" alt="Google Icon" class="w-[1.2vw]">
+                <span class="font-medium">Continuar con Google</span>
+            </button>
+        </div>
+        <div class="w-full justify-center items-center pt-[1vw] flex gap-[0.5vw]">
+                <span class="text-[0.9vw] text-[#ff69b4]">¿No tienes una cuenta?</span>
+                <span class="text-[0.9vw] text-[#ff69b4] hover:underline cursor-pointer" (click)="navigateTo('register')">
+                    Regístrate</span>
+        </div>
+    </div>
+</div>
