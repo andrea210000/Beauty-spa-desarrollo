@@ -1,123 +1,114 @@
 <!-- Componente de Nuestros Productos HTML -->
-<div class="bg-[#fdf2f8]">
+<!-- Lista los productos REALES de la base de datos (GET api/Producto/ObtenerProductos) -->
+<div class="bg-[#fdf2f8] font-[Nunito Sans] min-h-screen pb-[4vw]">
+    <p-toast position="top-right"></p-toast>
+
     <!-- Encabezado principal de la página -->
-    <div class="leading-relaxed text-lg">
-        <div class="text-center ">
-            <h1 class="text-[3vw] pt-[4vw] font-bold"> Nuestros Productos</h1>
-            <p class="mb-10"> Descubre nuestra colección curada de productos para el cuidado personal.</p>
+    <div class="text-center pt-[4vw] pb-[1vw]">
+        <p class="text-[0.9vw] tracking-[0.3vw] text-[#f3a1c4] font-semibold">BEAUTY SPA</p>
+        <h1 class="text-[3vw] font-bold text-[var(--dark-beauty-text)]">Nuestros Productos</h1>
+        <p class="mb-[2vw] text-gray-600">Descubre nuestra colección curada de productos para el cuidado personal.</p>
+
+        <!-- Filtros por categoría -->
+        <div class="flex justify-center gap-[1vw] flex-wrap px-[2vw]">
+            <button (click)="elegirFiltro(null)"
+                class="cursor-pointer px-[1.5vw] py-[0.6vw] rounded-full text-[0.9vw] font-semibold border-2 transition-all duration-300"
+                [class.bg-[#f3a1c4]]="filtro() === null"
+                [class.text-white]="filtro() === null"
+                [class.border-[#f3a1c4]]="filtro() === null"
+                [class.bg-white]="filtro() !== null"
+                [class.text-[#f3a1c4]]="filtro() !== null"
+                [class.border-pink-200]="filtro() !== null"
+                [class.hover:bg-pink-100]="filtro() !== null">
+                Todos
+            </button>
+
+            @for (cat of categorias(); track cat) {
+                <button (click)="elegirFiltro(cat)"
+                    class="cursor-pointer px-[1.5vw] py-[0.6vw] rounded-full text-[0.9vw] font-semibold border-2 transition-all duration-300"
+                    [class.bg-[#f3a1c4]]="filtro() === cat"
+                    [class.text-white]="filtro() === cat"
+                    [class.border-[#f3a1c4]]="filtro() === cat"
+                    [class.bg-white]="filtro() !== cat"
+                    [class.text-[#f3a1c4]]="filtro() !== cat"
+                    [class.border-pink-200]="filtro() !== cat"
+                    [class.hover:bg-pink-100]="filtro() !== cat">
+                    {{ cat }}
+                </button>
+            }
         </div>
-        <!-- Sección: Cuidado de la Piel -->
-        <div class="flex justify text-[1.5vw] space-x-2 mb-5 ml-12">
-            <hr class="border-t bg-[#f3a1c4] w-[0.3%] h-[2.5vw] ">
-            <h3 class="font-semibold">Cuidado de la Piel</h3>
-        </div>
-
-        <!-- Contenedor de tarjetas de productos de piel -->
-        <div class="flex flex-wrap justify-center gap-10 mb-1">
-
-            <div *ngFor="let p of getProductosPorCategoria('piel')"
-                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg bg-white hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
-
-                <div class="flex justify-center items-center cursor-pointer">
-                    <img [src]="p.image" class="w-[20vw] h-[15vw] object-cover rounded-[9px] mt-[1vw]">
-                </div>
-
-                <div class="p-[1vw]">
-                    <p class="font-bold">{{ p.name }}</p>
-                    <p>{{ p.size }}</p>
-                </div>
-
-                <div class="flex justify-center space-x-18">
-                    <span class="text-3xl text-[#FF69B4]">
-                        {{ p.price | currency:'' }}
-                    </span>
-
-                    <div class=" cursor-pointer rounded">
-                        <button
-                            class="bg-[#f3a1c4] cursor-pointer font-bold py-1.5 px-4 rounded hover:bg-[#ff69b4] transition-colors duration-300 transform active:scale-95"
-                            (click)="agregarAlCarrito(p)">
-                            Añadir al carrito
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Sección: Cuidado del Cabello -->
-        <div class="flex flex-wrap justify-center gap-10 mb-1">
-        <div class="flex justify text-[1.5vw] space-x-2 mb-5 ml-12 mt-[3vw]">
-            <hr class="border-t bg-[#f3a1c4] w-[0.3%] h-[2.5vw] ">
-            <h3 class="font-semibold">Cuidado del Cabello </h3>
-        </div>
-
-        <!-- Contenedor de tarjetas de productos de cabello -->
-
-            <div *ngFor="let p of getProductosPorCategoria('cabello')"
-                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg bg-white hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
-
-                <div class="flex justify-center items-center cursor-pointer">
-                    <img [src]="p.image" class="w-[20vw] h-[15vw] object-cover rounded-[9px] mt-[1vw]">
-                </div>
-
-                <div class="p-[1vw]">
-                    <p class="font-bold">{{ p.name }}</p>
-                    <p>{{ p.size }}</p>
-                </div>
-
-                <div class="flex justify-center space-x-18">
-                    <span class="text-3xl text-[#FF69B4]">
-                        {{ p.price | currency:'' }}
-                    </span>
-
-                    <div class=" cursor-pointer rounded">
-                        <button
-                            class="bg-[#f3a1c4] cursor-pointer font-bold py-1.5 px-4 rounded hover:bg-[#ff69b4] transition-colors duration-300 transform active:scale-95"
-                            (click)="agregarAlCarrito(p)">
-                            Añadir al carrito
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-        <!-- Sección: Productos de Belleza -->
-        <div class="flex justify text-[1.5vw] space-x-2 mb-5 ml-12 mt-[3vw]">
-            <hr class="border-t bg-[#f3a1c4] w-[0.3%] h-[2.5vw] ">
-            <h3 class="font-semibold">Productos de Belleza</h3>
-        </div>
-
-        <!-- Contenedor de tarjetas de productos de belleza -->
-        <div class="flex flex-wrap justify-center gap-10 mb-1">
-
-            <div *ngFor="let p of getProductosPorCategoria('belleza')"
-                class="w-[22vw] h-[25vw] rounded-[9px] shadow-lg bg-white hover:shadow-pink-200/50 transition-transform duration-300 ease-in-out hover:scale-102 overflow-hidden cursor-pointer">
-
-                <div class="flex justify-center items-center cursor-pointer">
-                    <img [src]="p.image" class="w-[20vw] h-[15vw] object-cover rounded-[9px] mt-[1vw]">
-                </div>
-
-                <div class="p-[1vw]">
-                    <p class="font-bold">{{ p.name }}</p>
-                    <p>{{ p.size }}</p>
-                </div>
-
-                <div class="flex justify-center space-x-18">
-                    <span class="text-3xl text-[#FF69B4]">
-                        {{ p.price | currency:'' }}
-                    </span>
-                    <div class="cursor-pointer rounded">
-                        <button
-                            class="bg-[#f3a1c4] cursor-pointer font-bold py-1.5 px-4 rounded hover:bg-[#ff69b4] transition-colors duration-300 transform active:scale-95"
-                            (click)="agregarAlCarrito(p)">
-                            Añadir al carrito
-                        </button>
-                    </div>
-                </div>   
-            </div>
-
-        </div>
-
     </div>
+
+    <!-- Estado: cargando -->
+    @if (cargando()) {
+        <p class="text-center text-[1.2vw] text-gray-500 py-[4vw]">Cargando productos...</p>
+    } @else {
+        <!-- Secciones generadas desde la API, una por categoría -->
+        @for (cat of categoriasVisibles; track cat) {
+            <!-- Título de sección con barra de acento -->
+            <div class="flex items-center gap-2 mb-[1.5vw] ml-[4vw] mt-[3vw]">
+                <span class="bg-[#f3a1c4] w-[0.4vw] h-[2vw] rounded-full"></span>
+                <h3 class="font-bold text-[1.6vw] text-[var(--dark-beauty-text)]">{{ cat }}</h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[2vw] px-[4vw]">
+                @for (p of porCategoria(cat); track p.idProducto) {
+                    <div
+                        class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-pink-300/70 hover:-translate-y-2 transition-all duration-300 flex flex-col">
+
+                        <!-- Imagen con estados de stock -->
+                        <div class="relative overflow-hidden">
+                            <img [src]="imagenDe(p)" [alt]="p.nombre"
+                                class="w-full h-[15vw] object-cover group-hover:scale-110 transition-transform duration-500"
+                                [class.opacity-50]="agotado(p)">
+
+                            @if (agotado(p)) {
+                                <span
+                                    class="absolute top-3 right-3 bg-red-500 text-white text-[0.7vw] font-bold px-2 py-1 rounded-full">
+                                    Agotado
+                                </span>
+                            } @else if (stockBajo(p)) {
+                                <span
+                                    class="absolute top-3 right-3 bg-amber-400 text-amber-900 text-[0.7vw] font-bold px-2 py-1 rounded-full">
+                                    ¡Solo quedan {{ p.stock }}!
+                                </span>
+                            } @else {
+                                <span
+                                    class="absolute top-3 right-3 bg-white/90 text-gray-700 text-[0.7vw] font-semibold px-2 py-1 rounded-full">
+                                    {{ p.stock }} disponibles
+                                </span>
+                            }
+                        </div>
+
+                        <!-- Información del producto -->
+                        <div class="p-[1.5vw] flex flex-col flex-1">
+                            <p class="font-bold text-[1.1vw] text-[var(--dark-beauty-text)] leading-tight">
+                                {{ p.nombre }}
+                            </p>
+                            <p class="text-[0.75vw] text-[#f3a1c4] font-semibold mt-1">{{ p.medida }}</p>
+                            <p class="text-[0.8vw] text-gray-500 mt-2 leading-snug flex-1">
+                                {{ p.descripcion }}
+                            </p>
+
+                            <div class="flex items-center justify-between gap-3 mt-[1.5vw]">
+                                <span class="text-[1.4vw] font-extrabold text-[#ff69b4]">
+                                    {{ p.precio | currency:'COP':'symbol':'1.0-0' }}
+                                </span>
+
+                                <button (click)="agregarAlCarrito(p)" [disabled]="agotado(p)"
+                                    class="bg-[#f3a1c4] cursor-pointer font-bold text-[0.8vw] py-[0.7vw] px-[1.2vw] rounded-full hover:bg-[#ff69b4] transition-all duration-300 transform active:scale-95 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed disabled:transform-none">
+                                    {{ agotado(p) ? 'Agotado' : 'Agregar' }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+        <!-- Estado: sin productos -->
+        @if (productos().length === 0) {
+            <p class="text-center text-[1.2vw] text-gray-500 py-[4vw]">No hay productos disponibles.</p>
+        }
+    }
 </div>

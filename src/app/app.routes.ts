@@ -10,6 +10,8 @@ import {ServicesComponent} from './views/services-component/services-component';
 import { OurProductsComponent } from './views/our-products-component/our-products-component';
 import { LoginComponent } from './views/login-component/login-component';
 import { RegisterComponent } from './views/register-component/register-component';
+import { AccountComponent } from './views/account-component/account-component';
+import { authGuard } from './guards/auth.guard';
 
 
 export const routes: Routes = [
@@ -23,6 +25,7 @@ export const routes: Routes = [
   { path: 'payment', component: PaymentComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'mi-cuenta', component: AccountComponent, canActivate: [authGuard] },
   { path: 'home', component: HomeComponent },
   { path: '**', component: ErrorComponent },
   

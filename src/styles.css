@@ -1,12 +1,17 @@
 @import url('https://cdn.jsdelivr.net/npm/primeicons@7.0.0/primeicons.css');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playpen+Sans:wght@100..800&display=swap');
 
+/* La fuente Nunito Sans se carga desde index.html con <link>
+   (un @import de URL remota en CSS queda despues de las reglas al empaquetar
+   y el navegador lo ignora) */
 
+/* Nunito Sans es la fuente de TODO el sitio */
+@theme {
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+}
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    font-family: 'Poppins', sans-serif;
 }
 
 :root {

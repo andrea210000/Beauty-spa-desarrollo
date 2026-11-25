@@ -1,0 +1,271 @@
+<div class="font-['Nunito_Sans'] min-h-screen bg-[#fdf6f9] pb-[4vw]">
+    <div class="w-[85vw] mx-auto pt-[3vw]">
+
+        @if (cargando()) {
+            <!-- Cargando -->
+            <div class="text-center py-[8vw] text-[1vw] text-gray-400">Cargando tu cuenta...</div>
+        } @else if (!perfil()) {
+            <!-- Sesión inválida o error al cargar -->
+            <div class="text-center py-[8vw]">
+                <p class="text-[1vw] text-gray-500 mb-[1.5vw]">No pudimos cargar tu cuenta.</p>
+                <button (click)="irAlLogin()"
+                    class="bg-[#f3a1c4] hover:bg-[#ff69b4] transition-colors text-white font-bold text-[0.9vw] px-[2.5vw] py-[0.9vw] rounded-full cursor-pointer">
+                    Volver al inicio de sesión
+                </button>
+            </div>
+        } @else {
+
+            <!-- ============ BANNER DE CUENTA ============ -->
+            <div class="bg-white rounded-[1.5vw] border border-[#f3a1c4] p-[2vw] flex items-center gap-[2vw] shadow-sm">
+                <!-- Avatar con foto de localStorage o inicial -->
+                <div class="relative shrink-0">
+                    <div
+                        class="h-[9vw] w-[9vw] rounded-full overflow-hidden bg-[#f3a1c4] flex items-center justify-center text-white text-[3vw] font-bold">
+                        @if (foto()) {
+                            <img [src]="foto()" alt="Foto de perfil" class="h-full w-full object-cover">
+                        } @else {
+                            <span>{{ iniciales() }}</span>
+                        }
+                    </div>
+                    <label
+                        class="absolute bottom-0 right-0 bg-white border border-[#f3a1c4] rounded-full px-[0.7vw] py-[0.3vw] text-[0.7vw] font-bold text-[#e278a9] cursor-pointer hover:bg-[#fce7f3] whitespace-nowrap">
+                        Cambiar foto
+                        <input type="file" accept="image/*" class="hidden" (change)="alElegirFoto($event)">
+                    </label>
+                </div>
+
+                <!-- Datos del banner -->
+                <div class="flex-1">
+                    <div class="flex items-center gap-[1vw] flex-wrap">
+                        <h1 class="text-[1.8vw] font-bold text-[#3a2c31]">
+                            {{ perfil()!.nombres }} {{ perfil()!.apellidos }}
+                        </h1>
+                        <span
+                            class="bg-[#f3a1c4] text-white text-[0.7vw] font-bold px-[0.9vw] py-[0.3vw] rounded-full uppercase">
+                            {{ perfil()!.rolNombre }}
+                        </span>
+                    </div>
+                    <p class="text-[0.95vw] text-gray-500 mt-[0.3vw]">@{{ perfil()!.usuario }}</p>
+                    <div class="flex gap-[2vw] mt-[0.8vw] text-[0.85vw] text-gray-600">
+                        <span>Miembro desde {{ perfil()!.fechaRegistro | date:'MMM yyyy' }}</span>
+                        <span>{{ citas().length }} citas</span>
+                    </div>
+                </div>
+
+                @if (foto()) {
+                    <button (click)="quitarFoto()"
+                        class="text-[0.75vw] text-red-500 border border-red-200 rounded-full px-[1vw] py-[0.4vw] hover:bg-red-50 cursor-pointer shrink-0">
+                        Quitar foto
+                    </button>
+                }
+            </div>
+
+            <!-- ============ CONTENIDO: MENÚ LATERAL + PANEL ============ -->
+            <div class="flex gap-[2vw] mt-[2vw] items-start">
+
+                <!-- Menú lateral -->
+                <aside class="w-[17vw] bg-white rounded-[1.5vw] border border-[#f3a1c4] p-[1vw] shrink-0">
+                    <button (click)="setSeccion('datos')"
+                        [class]="seccion() === 'datos'
+                            ? 'bg-[#f3a1c4] text-white'
+                            : 'text-[#5b4650] hover:bg-[#fce7f3]'
+                        "
+                        class="block w-full text-left px-[1vw] py-[0.8vw] rounded-xl text-[0.9vw] font-semibold cursor-pointer transition-colors mb-[0.5vw]">
+                        Datos personales
+                    </button>
+                    <button (click)="setSeccion('citas')"
+                        [class]="seccion() === 'citas'
+                            ? 'bg-[#f3a1c4] text-white'
+                            : 'text-[#5b4650] hover:bg-[#fce7f3]'
+                        "
+                        class="block w-full text-left px-[1vw] py-[0.8vw] rounded-xl text-[0.9vw] font-semibold cursor-pointer transition-colors mb-[0.5vw]">
+                        Mis citas
+                        @if (citas().length > 0) {
+                            <span class="ml-[0.5vw] text-[0.7vw] font-bold">{{ citas().length }}</span>
+                        }
+                    </button>
+                    <button (click)="setSeccion('seguridad')"
+                        [class]="seccion() === 'seguridad'
+                            ? 'bg-[#f3a1c4] text-white'
+                            : 'text-[#5b4650] hover:bg-[#fce7f3]'
+                        "
+                        class="block w-full text-left px-[1vw] py-[0.8vw] rounded-xl text-[0.9vw] font-semibold cursor-pointer transition-colors">
+                        Seguridad
+                    </button>
+
+                    <button (click)="cerrarSesion()"
+                        class="block w-full text-left px-[1vw] py-[0.8vw] mt-[1vw] rounded-xl text-[0.9vw] font-semibold text-red-600 hover:bg-red-50 cursor-pointer transition-colors border-t border-[#f9d9e8] pt-[1vw]">
+                        Cerrar sesión
+                    </button>
+                </aside>
+
+                <!-- Panel de contenido -->
+                <section class="flex-1 bg-white rounded-[1.5vw] border border-[#f3a1c4] p-[2vw] min-h-[30vw]">
+
+                    <!-- ========== DATOS PERSONALES ========== -->
+                    @if (seccion() === 'datos') {
+                        <h2 class="text-[1.3vw] font-bold text-[#3a2c31]">Datos personales</h2>
+                        <p class="text-[0.85vw] text-gray-500 mt-[0.3vw]">
+                            Esta información se usa para tus citas y compras.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-[1.5vw] mt-[1.5vw]">
+                            <div>
+                                <label class="block text-[0.8vw] font-semibold text-[#5b4650] mb-[0.4vw]">Nombres</label>
+                                <input [(ngModel)]="form.nombres" type="text"
+                                    class="w-full border border-[#f3a1c4] rounded-xl px-[1vw] py-[0.7vw] text-[0.9vw] outline-none focus:border-[#e278a9]">
+                            </div>
+                            <div>
+                                <label class="block text-[0.8vw] font-semibold text-[#5b4650] mb-[0.4vw]">Apellidos</label>
+                                <input [(ngModel)]="form.apellidos" type="text"
+                                    class="w-full border border-[#f3a1c4] rounded-xl px-[1vw] py-[0.7vw] text-[0.9vw] outline-none focus:border-[#e278a9]">
+                            </div>
+                            <div>
+                                <label class="block text-[0.8vw] font-semibold text-[#5b4650] mb-[0.4vw]">Correo
+                                    electrónico</label>
+                                <input [(ngModel)]="form.correo" type="email"
+                                    class="w-full border border-[#f3a1c4] rounded-xl px-[1vw] py-[0.7vw] text-[0.9vw] outline-none focus:border-[#e278a9]">
+                            </div>
+                            <div>
+                                <label class="block text-[0.8vw] font-semibold text-[#5b4650] mb-[0.4vw]">Teléfono</label>
+                                <input [(ngModel)]="form.telefono" type="tel" maxlength="15"
+                                    class="w-full border border-[#f3a1c4] rounded-xl px-[1vw] py-[0.7vw] text-[0.9vw] outline-none focus:border-[#e278a9]">
+                            </div>
+
+                            <!-- Información que no se puede editar -->
+                            <div class="col-span-2 pt-[1.2vw] border-t border-[#f9d9e8]">
+                                <p class="text-[0.8vw] font-semibold text-[#5b4650] mb-[0.8vw]">
+                                    Información de la cuenta (solo lectura)
+                                </p>
+                                <div class="grid grid-cols-3 gap-[1vw] text-[0.85vw] text-[#3a2c31]">
+                                    <div>
+                                        <span class="block text-[0.75vw] text-gray-400">Usuario</span>
+                                        {{ perfil()!.usuario }}
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.75vw] text-gray-400">Tipo de identificación</span>
+                                        {{ perfil()!.tipoIdentificacionNombre }}
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.75vw] text-gray-400">Número</span>
+                                        {{ perfil()!.numeroIdentificacion }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-span-2 flex justify-end">
+                                <button (click)="guardarPerfil()" [disabled]="guardando()"
+                                    class="bg-[#f3a1c4] hover:bg-[#ff69b4] disabled:opacity-60 transition-colors text-white font-bold text-[0.9vw] px-[2vw] py-[0.8vw] rounded-xl cursor-pointer">
+                                    {{ guardando() ? 'Guardando...' : 'Guardar cambios' }}
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                    <!-- ========== MIS CITAS ========== -->
+                    @else if (seccion() === 'citas') {
+                        <h2 class="text-[1.3vw] font-bold text-[#3a2c31]">Mis citas</h2>
+                        <p class="text-[0.85vw] text-gray-500 mt-[0.3vw]">
+                            El estado de tus citas y la opción de cancelarlas.
+                        </p>
+
+                        @if (citas().length === 0) {
+                            <div class="text-center py-[5vw] text-gray-400">
+                                <p class="text-[1vw] font-semibold text-gray-500 mb-[1vw]">Todavía no tienes citas</p>
+                                <button (click)="agendar()"
+                                    class="bg-[#f3a1c4] hover:bg-[#ff69b4] transition-colors text-white font-bold text-[0.9vw] px-[2.5vw] py-[0.9vw] rounded-full cursor-pointer">
+                                    Agendar una cita
+                                </button>
+                            </div>
+                        } @else {
+                            <div class="flex flex-col gap-[1vw] mt-[1.5vw]">
+                                @for (c of citas(); track c.idCita) {
+                                    <div class="border border-[#f9d9e8] rounded-2xl p-[1.2vw] flex items-center gap-[1.5vw]">
+                                        <!-- Fecha -->
+                                        <div class="bg-[#fce7f3] rounded-xl px-[1vw] py-[0.7vw] text-center min-w-[7vw]">
+                                            <p class="text-[1.2vw] font-bold text-[#e278a9]">
+                                                {{ c.fechaHora | date:'dd' }}
+                                            </p>
+                                            <p class="text-[0.7vw] text-[#5b4650] uppercase">
+                                                {{ c.fechaHora | date:'MMM' }} · {{ c.fechaHora | date:'HH:mm' }}
+                                            </p>
+                                        </div>
+
+                                        <!-- Detalle -->
+                                        <div class="flex-1">
+                                            <p class="text-[0.95vw] font-semibold text-[#3a2c31]">
+                                                {{ nombresServicios(c) }}
+                                            </p>
+                                            <p class="text-[0.8vw] text-gray-500 mt-[0.2vw]">
+                                                {{ c.notas ? c.notas : 'Sin notas' }}
+                                            </p>
+                                            @if (c.total > 0) {
+                                                <p class="text-[0.8vw] font-bold text-[#e278a9] mt-[0.3vw]">
+                                                    {{ currencyFormat(c.total) }}
+                                                </p>
+                                            }
+                                        </div>
+
+                                        <!-- Estado -->
+                                        <span
+                                            class="text-[0.7vw] font-bold px-[0.9vw] py-[0.4vw] rounded-full uppercase whitespace-nowrap"
+                                            [class]="claseEstado(c.idEstado)">
+                                            {{ c.estadoNombre }}
+                                        </span>
+
+                                        @if (puedeCancelar(c)) {
+                                            <button (click)="cancelar(c)"
+                                                class="text-[0.75vw] text-red-600 border border-red-300 rounded-lg px-[1vw] py-[0.5vw] hover:bg-red-50 cursor-pointer whitespace-nowrap">
+                                                Cancelar
+                                            </button>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        }
+                    }
+
+                    <!-- ========== SEGURIDAD ========== -->
+                    @else {
+                        <h2 class="text-[1.3vw] font-bold text-[#3a2c31]">Seguridad</h2>
+                        <p class="text-[0.85vw] text-gray-500 mt-[0.3vw]">
+                            Cambia tu contraseña. La actual se verifica antes de guardar la nueva.
+                        </p>
+
+                        <div class="max-w-[28vw] mt-[1.5vw] flex flex-col gap-[1.2vw]">
+                            <div>
+                                <label class="block text-[0.8vw] font-semibold text-[#5b4650] mb-[0.4vw]">Contraseña
+                                    actual</label>
+                                <input [(ngModel)]="passForm.actual" type="password"
+                                    class="w-full border border-[#f3a1c4] rounded-xl px-[1vw] py-[0.7vw] text-[0.9vw] outline-none focus:border-[#e278a9]">
+                            </div>
+                            <div>
+                                <label class="block text-[0.8vw] font-semibold text-[#5b4650] mb-[0.4vw]">Nueva
+                                    contraseña</label>
+                                <input [(ngModel)]="passForm.nueva" type="password"
+                                    class="w-full border border-[#f3a1c4] rounded-xl px-[1vw] py-[0.7vw] text-[0.9vw] outline-none focus:border-[#e278a9]">
+                                <p class="text-[0.7vw] text-gray-400 mt-[0.3vw]">Mínimo 6 caracteres</p>
+                            </div>
+                            <div>
+                                <label class="block text-[0.8vw] font-semibold text-[#5b4650] mb-[0.4vw]">Confirmar
+                                    nueva contraseña</label>
+                                <input [(ngModel)]="passForm.confirmar" type="password"
+                                    class="w-full border border-[#f3a1c4] rounded-xl px-[1vw] py-[0.7vw] text-[0.9vw] outline-none focus:border-[#e278a9]">
+                            </div>
+
+                            <div class="flex justify-end mt-[0.5vw]">
+                                <button (click)="cambiarPassword()" [disabled]="cambiandoPass()"
+                                    class="bg-[#f3a1c4] hover:bg-[#ff69b4] disabled:opacity-60 transition-colors text-white font-bold text-[0.9vw] px-[2vw] py-[0.8vw] rounded-xl cursor-pointer">
+                                    {{ cambiandoPass() ? 'Cambiando...' : 'Cambiar contraseña' }}
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                </section>
+            </div>
+        }
+    </div>
+</div>
+
+<p-toast />

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { Authservice } from '../../services/authservice';
+import { SessionService } from '../../services/session.service';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
@@ -17,6 +18,7 @@ export class LoginComponent {
 
   private router = inject(Router);
   private authservice = inject(Authservice);
+  private session = inject(SessionService);
   private messageService = inject(MessageService);
 
   mostrarPassword: boolean = false;
@@ -44,6 +46,7 @@ export class LoginComponent {
       next: (res: any) => {
         this.messageService.add({ severity: 'success', summary: 'Inicio de sesión exitoso', detail: 'Bienvenido de nuevo al santuario', life: 3000 });
         localStorage.setItem('accessToken', res.accessToken);
+        this.session.cargarDesdeToken(); // el menú ya debe saber que hay sesión
         setTimeout(() => this.router.navigate(['/home']), 1200);
       },
       error: () => {
